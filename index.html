@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Dr. med. vet. Amely Campe | Supervision, Mediation & Seminare für Tiermedizin</title>
+    <meta name="description" content="Professionelle Supervision, Mediation & praxisnahe Seminare für Tierärzt:innen, Praxisteams und Führungskräfte in der Tiermedizin. Wieder klarer handeln.">
+    <meta name="keywords" content="Supervision, Mediation, Tiermedizin, Tierarzt Coaching, Praxisteam Konfliktlösung, Amely Campe, Tierärztin Supervision, Seminare Tiermedizin">
+    <meta name="author" content="Dr. med. vet. Amely Campe">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Dr. med. vet. Amely Campe | Supervision & Mediation">
+    <meta property="og:description" content="Professionelle Unterstützung bei Konflikten, Belastung & Teamprozessen im tiermedizinischen Alltag.">
+    <meta property="og:image" content="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/dr-amely-campe-profilbild.webp">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/dr-amely-campe-logo.webp">
+
+    <!-- Cloudflare Turnstile Verification -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- DECORATIVE BLOBS FOR VISUAL DEPTH -->
+    <div class="blob blob-1" id="decoBlob1"></div>
+    <div class="blob blob-2" id="decoBlob2"></div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="header" id="siteHeader">
+        <div class="container nav-container">
+            <a href="#home" class="logo" id="headerLogoLink">
+                <img src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/dr-amely-campe-logo.webp" alt="Dr. Amely Campe Logo" id="logoImage">
+            </a>
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#services" class="nav-link" id="navLinkServices">Leistungen</a></li>
+                <li><a href="#seminare" class="nav-link" id="navLinkSeminars">Seminare</a></li>
+                <li><a href="#audience" class="nav-link" id="navLinkAudience">Zielgruppe</a></li>
+                <li><a href="#about" class="nav-link" id="navLinkAbout">Über mich</a></li>
+                <li><a href="#contact" class="nav-link" id="navLinkContact">Kontakt</a></li>
+                <li class="nav-cta-mobile"><a href="#contact" class="btn btn-primary" id="mobileMenuCta">Gespräch vereinbaren</a></li>
+            </ul>
+            
+            <div class="nav-right-ctas" id="headerCtaWrapper">
+                <a href="tel:+495111234567" class="header-phone" id="headerPhoneLink">
+                    <i data-lucide="phone"></i>
+                    <span>+49 (0) 511 / 1234567</span>
+                </a>
+                <a href="#contact" class="btn btn-primary" style="padding: 12px 28px; font-size: 0.9rem;" id="headerCtaBtn">Gespräch vereinbaren</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="mainContent">
+        
+        <!-- HERO SECTION -->
+        <section class="section hero" id="home">
+            <div class="container grid-2">
+                <div class="hero-content reveal" id="heroTextContainer">
+                    <span class="eyebrow" id="heroEyebrow">Supervision · Mediation · Seminare für die Tiermedizin</span>
+                    <h1 id="heroHeadline">Wenn berufliche Belastung Raum braucht.</h1>
+                    <p class="lead" id="heroLeadText">Ich begleite Tierärzt:innen, Praxisteams und Führungskräfte dabei, schwierige Situationen zu sortieren, Konflikte besser zu verstehen und wieder klarer ins Handeln zu kommen.</p>
+                    <div class="hero-actions-container" id="heroCtaContainer">
+                        <a href="#contact" class="btn btn-primary" id="heroPrimaryCta">Gespräch vereinbaren <i data-lucide="arrow-right"></i></a>
+                        <div class="hero-phone-cta" id="heroPhoneCta">
+                            <i data-lucide="phone"></i>
+                            <span>Oder direkt anrufen: <a href="tel:+495111234567">+49 (0) 511 / 1234567</a></span>
+                        </div>
+                        <div class="hero-trust-badge" style="display: flex; align-items: center; gap: 8px; margin-top: 10px;">
+                            <div style="display: flex; gap: 2px;">
+                                <i data-lucide="star" style="width: 14px; height: 14px; fill: #FFB300; color: #FFB300;"></i>
+                                <i data-lucide="star" style="width: 14px; height: 14px; fill: #FFB300; color: #FFB300;"></i>
+                                <i data-lucide="star" style="width: 14px; height: 14px; fill: #FFB300; color: #FFB300;"></i>
+                                <i data-lucide="star" style="width: 14px; height: 14px; fill: #FFB300; color: #FFB300;"></i>
+                                <i data-lucide="star" style="width: 14px; height: 14px; fill: #FFB300; color: #FFB300;"></i>
+                            </div>
+                            <span style="font-size: 0.92rem; color: var(--color-text-muted);"><strong>5.0 Sterne</strong> auf Google</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image reveal" id="heroImageContainer">
+                    <div class="hero-image-wrapper" id="heroImageWrapper">
+                        <img src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/AC_02_ergebnis.webp" alt="Dr. Amely Campe Portrait" id="heroPortraitImage">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATEMENT SECTION -->
+        <section class="section statement-section" id="statement">
+            <div class="container">
+                <div class="statement-content reveal" id="statementContentWrapper">
+                    <span class="eyebrow" id="statementEyebrow">Perspektivenwechsel</span>
+                    <h2 id="statementHeading">Manchmal braucht es Abstand, um wieder klar zu sehen.</h2>
+                    <p class="lead" id="statementParagraph">Der Alltag in der Tiermedizin ist intensiv. Viele Entscheidungen, viele Erwartungen, viele Gespräche und oft wenig Zeit, um innezuhalten.<br><br>Wenn Belastung, Konflikte oder Unsicherheit zu viel Raum einnehmen, kann ein geschützter Blick von außen helfen. In meiner Arbeit geht es darum, Zusammenhänge sichtbar zu machen, neue Perspektiven zu entwickeln und Lösungen zu finden, die zu Ihnen, Ihrem Team und Ihrer beruflichen Realität passen.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section class="section section-alt" id="services">
+            <div class="container">
+                <div class="services-header reveal" id="servicesHeader">
+                    <span class="eyebrow" id="servicesEyebrow">Mein Angebot</span>
+                    <h2 id="servicesTitle">Wobei ich Sie begleite</h2>
+                </div>
+                
+                <div class="services-grid stagger-container" id="servicesGrid">
+                    
+                    <div class="service-card" id="serviceSupervision">
+                        <div class="service-top">
+                            <div class="service-icon"><i data-lucide="eye"></i></div>
+                            <h3>Supervision</h3>
+                            <p>Für Situationen, die belasten, wiederkehren oder innerlich nachwirken.</p>
+                        </div>
+                        <a href="#contact" class="btn-text service-contact-link" data-service="supervision" id="linkSupervisionContact">Anfrage senden <i data-lucide="arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="service-card" id="serviceMediation">
+                        <div class="service-top">
+                            <div class="service-icon"><i data-lucide="users"></i></div>
+                            <h3>Mediation</h3>
+                            <p>Für Konflikte, die geklärt werden wollen, bevor sie die Zusammenarbeit dauerhaft erschweren.</p>
+                        </div>
+                        <a href="#contact" class="btn-text service-contact-link" data-service="mediation" id="linkMediationContact">Anfrage senden <i data-lucide="arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="service-card" id="serviceTeamprozesse">
+                        <div class="service-top">
+                            <div class="service-icon"><i data-lucide="git-branch"></i></div>
+                            <h3>Teamprozesse</h3>
+                            <p>Für Praxen, Behörden und Organisationen, die wieder besser miteinander arbeiten möchten.</p>
+                        </div>
+                        <a href="#contact" class="btn-text service-contact-link" data-service="teamprozess" id="linkTeamprozesseContact">Anfrage senden <i data-lucide="arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="service-card" id="serviceSeminare">
+                        <div class="service-top">
+                            <div class="service-icon"><i data-lucide="book-open"></i></div>
+                            <h3>Seminare & Vorträge</h3>
+                            <p>Für Kommunikation, Führung, Mental Health und die besonderen Herausforderungen der Tiermedizin.</p>
+                        </div>
+                        <a href="#contact" class="btn-text service-contact-link" data-service="seminar" id="linkSeminareAnchor">Anfrage senden <i data-lucide="arrow-right"></i></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMINARS SECTION -->
+        <section class="section" id="seminare">
+            <div class="container">
+                <div class="seminar-header reveal" id="seminarTextWrapper">
+                    <span class="eyebrow" id="seminarEyebrow">Seminarkatalog</span>
+                    <h2 id="seminarHeadline">Seminare, die nah am beruflichen Alltag sind.</h2>
+                    <p class="lead" id="seminarLeadText" style="margin-top: 20px;">In meinen Seminaren und Vorträgen geht es um Themen, die Tierärzt:innen, Praxisteams und Führungskräfte wirklich beschäftigen. Die Inhalte sind praxisnah, verständlich und auf echte Situationen übertragbar.</p>
+                </div>
+                
+                <!-- DYNAMIC SEMINAR CARDS GRID (PRO MAX DESIGN) -->
+                <div class="seminar-cards-grid stagger-container" id="seminarCardsGrid">
+                    <!-- Dynamic rendering from js/main.js -->
+                </div>
+                
+                <div style="text-align: center; margin-top: 60px;" class="reveal" id="seminarActionWrapper">
+                    <a href="#contact" class="btn btn-primary service-contact-link" data-service="seminar" id="btnSeminarContact">Seminarthemen anfragen <i data-lucide="mail"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- AUDIENCE SECTION (REDESIGNED WITH GRAPHICS AND HOVER FLOW) -->
+        <section class="section audience-section" id="audience">
+            <div class="container">
+                <div class="audience-intro reveal" id="audienceIntro">
+                    <span class="eyebrow" id="audienceEyebrow">Zielgruppe</span>
+                    <h2 id="audienceHeadline">Für Menschen, die Verantwortung tragen.</h2>
+                    <p class="lead" id="audienceLeadText">Meine Arbeit richtet sich an Menschen, die in der Tiermedizin viel leisten und dabei nicht den Kontakt zu sich selbst, ihrem Team oder ihrem beruflichen Anspruch verlieren möchten.</p>
+                </div>
+                
+                <div class="audience-grid stagger-container" id="audienceGrid">
+                    
+                    <div class="audience-card" id="audienceTierärzte">
+                        <div class="audience-card-bg" style="background-image: url('https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/tieraerzte.webp');"></div>
+                        <span class="audience-card-num">01</span>
+                        <h3>Tierärzt:innen</h3>
+                        <p>Unterstützung im anspruchsvollen Behandlungs- und Entscheidungsalltag bei starker Arbeitslast.</p>
+                    </div>
+                    
+                    <div class="audience-card" id="audienceFührungskräfte">
+                        <div class="audience-card-bg" style="background-image: url('https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/fuehrungskraefte.webp');"></div>
+                        <span class="audience-card-num">02</span>
+                        <h3>Führungskräfte</h3>
+                        <p>Begleitung bei fordernden Leitungsaufgaben und komplexen Teamentwicklungsfragen.</p>
+                    </div>
+                    
+                    <div class="audience-card" id="audiencePraxisteams">
+                        <div class="audience-card-bg" style="background-image: url('https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/praxisteams.webp');"></div>
+                        <span class="audience-card-num">03</span>
+                        <h3>Praxisteams</h3>
+                        <p>Förderung einer lösungsorientierten Zusammenarbeit und das Klären verdeckter Missverständnisse.</p>
+                    </div>
+                    
+                    <div class="audience-card" id="audienceNachwuchs">
+                        <div class="audience-card-bg" style="background-image: url('https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/nachwuchskraefte.webp');"></div>
+                        <span class="audience-card-num">04</span>
+                        <h3>Nachwucskräfte</h3>
+                        <p>Orientierung beim Berufseinstieg, zur Rollenfindung und Burnout-Prävention.</p>
+                    </div>
+                    
+                    <div class="audience-card" id="audienceBehörden">
+                        <div class="audience-card-bg" style="background-image: url('https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/veterinaerbehoerden.webp');"></div>
+                        <span class="audience-card-num">05</span>
+                        <h3>Veterinärbehörden</h3>
+                        <p>Supervision und Begleitung in emotional und regulatorisch herausfordernden Prüfungs-Settings.</p>
+                    </div>
+                    
+                    <div class="audience-card" id="audienceOrganisationen">
+                        <div class="audience-card-bg" style="background-image: url('https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/organisationen.webp');"></div>
+                        <span class="audience-card-num">06</span>
+                        <h3>Organisationen</h3>
+                        <p>Lösungen für wissenschaftliche Institute, Kammern und tiermedizinische Verbände.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="section section-alt" id="about">
+            <div class="container grid-2 about-grid">
+                <div class="about-image reveal" id="aboutImageWrapper">
+                    <div class="about-image-wrapper">
+                        <img src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/dr-amely-campe-profilbild.webp" alt="Dr. Amely Campe Profil" id="aboutProfileImage">
+                    </div>
+                </div>
+                
+                <div class="about-content reveal" id="aboutTextWrapper">
+                    <span class="eyebrow" id="aboutEyebrow">Hintergrund</span>
+                    <h2 id="aboutTitle">Ich arbeite ruhig, klar und wertschätzend.</h2>
+                    <div class="experience-tag" id="experienceTag">
+                        <i data-lucide="award"></i>
+                        <span>Tierärztin & Supervisorin</span>
+                    </div>
+                    <div class="about-text" id="aboutParagraphs">
+                        <p>Ich gebe keine schnellen Standardantworten. Ich höre zu, frage nach und begleite Sie dabei, Ihre eigene Situation besser zu verstehen.</p>
+                        <p>Dabei verbinde ich meine Erfahrung als Tierärztin mit Supervision, Mediation, Kommunikation und Erwachsenenbildung. Mir ist wichtig, dass sich Menschen ernst genommen fühlen und gleichzeitig wieder konkrete nächste Schritte erkennen.</p>
+                    </div>
+                    
+                    <!-- Google Review Widget -->
+                    <div class="google-review-badge light-bg" style="margin-top: 30px; margin-bottom: 10px;">
+                        <div class="google-badge-left">
+                            <svg class="google-icon" viewBox="0 0 24 24">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l3.66-2.85z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.85c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                            <div class="google-badge-text">
+                                <span class="google-title">Google Bewertung</span>
+                                <div class="google-stars">
+                                    <span class="rating-val">5.0</span>
+                                    <div class="stars-list">
+                                        <i data-lucide="star"></i>
+                                        <i data-lucide="star"></i>
+                                        <i data-lucide="star"></i>
+                                        <i data-lucide="star"></i>
+                                        <i data-lucide="star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://search.google.com/local/writereview?placeid=ChIJ592V5-N1cEcR2p6zU22r-2Y" target="_blank" rel="noopener" class="google-review-btn">
+                            <span>Bewerten</span>
+                            <i data-lucide="external-link" style="width:12px;height:12px;"></i>
+                        </a>
+                    </div>
+
+                    <div style="margin-top: 30px;" id="aboutLinkContainer">
+                        <a href="#contact" class="btn btn-primary" id="btnAboutContact">Gespräch vereinbaren <i data-lucide="calendar"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="section" id="contact">
+            <div class="container grid-2 contact-grid">
+                <div class="contact-info reveal" id="contactInfoWrapper">
+                    <span class="eyebrow" id="contactEyebrow">Kontakt</span>
+                    <h2 id="contactTitle">Der erste Schritt ist ein Gespräch.</h2>
+                    <p class="lead" id="contactLeadText">Wenn Sie merken, dass ein Thema Sie, Ihr Team oder Ihre berufliche Situation beschäftigt, nehmen Sie gerne kontakt mit mir auf.</p>
+                    <p id="contactBodyText">Gemeinsam klären wir, welches Format passend ist: Einzelgespräch, Supervision, Mediation, Teamprozess, Seminar oder Vortrag.</p>
+                    
+                    <div class="contact-method-list" id="contactMethods">
+                        <div class="contact-method-item" id="methodEmail">
+                            <div class="contact-method-icon"><i data-lucide="mail"></i></div>
+                            <div class="contact-method-content">
+                                <h4>E-Mail senden</h4>
+                                <a href="mailto:info@amely-campe.de" id="linkEmail">info@amely-campe.de</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method-item" id="methodPhone">
+                            <div class="contact-method-icon"><i data-lucide="phone"></i></div>
+                            <div class="contact-method-content">
+                                <h4>Telefonische Anfrage</h4>
+                                <a href="tel:+495111234567" id="linkPhone">+49 (0) 511 / 1234567</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method-item" id="methodLocation">
+                            <div class="contact-method-icon"><i data-lucide="map-pin"></i></div>
+                            <div class="contact-method-content">
+                                <h4>Räumlichkeiten</h4>
+                                <span>Hannover / Online / Vor Ort in Ihrer Praxis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-col reveal" id="contactFormCol">
+                    <div class="contact-form-wrapper" id="contactFormWrapper">
+                        <form id="contactForm">
+                            <!-- 3 Step Flow Indicator -->
+                            <div class="form-steps">
+                                <div class="form-step-indicator active" data-step="1">
+                                    <span class="step-num">1</span>
+                                    <span class="step-label">Anliegen</span>
+                                </div>
+                                <div class="form-step-line" id="stepLine1"></div>
+                                <div class="form-step-indicator" data-step="2">
+                                    <span class="step-num">2</span>
+                                    <span class="step-label">Kontakt</span>
+                                </div>
+                                <div class="form-step-line" id="stepLine2"></div>
+                                <div class="form-step-indicator" data-step="3">
+                                    <span class="step-num">3</span>
+                                    <span class="step-label">Absenden</span>
+                                </div>
+                            </div>
+
+                            <!-- STEP 1 PANEL -->
+                            <div class="form-step-panel active" data-panel="1">
+                                <div class="form-group" id="formGroupFormat">
+                                    <label for="format" class="form-label">Interesse an</label>
+                                    <select id="format" class="form-control">
+                                        <option value="supervision">Supervision</option>
+                                        <option value="mediation">Mediation</option>
+                                        <option value="teamprozess">Teamprozess</option>
+                                        <option value="seminar">Seminar / Vortrag</option>
+                                        <option value="anderes">Anderes Anliegen</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group" id="formGroupMessage">
+                                    <label for="message" class="form-label">Nachricht *</label>
+                                    <textarea id="message" class="form-control" placeholder="Beschreiben Sie kurz Ihr Anliegen..." required></textarea>
+                                </div>
+
+                                <div class="form-nav-buttons">
+                                    <div></div> <!-- spacer -->
+                                    <button type="button" class="btn btn-primary" id="btnNext1">Weiter <i data-lucide="arrow-right"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- STEP 2 PANEL -->
+                            <div class="form-step-panel" data-panel="2">
+                                <div class="form-row" id="formRowNameEmail">
+                                    <div class="form-group" id="formGroupName">
+                                        <label for="name" class="form-label">Name *</label>
+                                        <input type="text" id="name" class="form-control" placeholder="Ihr Name" required>
+                                    </div>
+                                    <div class="form-group" id="formGroupEmail">
+                                        <label for="email" class="form-label">E-Mail *</label>
+                                        <input type="email" id="email" class="form-control" placeholder="ihre@adresse.de" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group" id="formGroupPhone">
+                                    <label for="phone" class="form-label">Telefonnummer</label>
+                                    <input type="tel" id="phone" class="form-control" placeholder="Für eventuelle Rückfragen">
+                                </div>
+
+                                <div class="form-nav-buttons">
+                                    <button type="button" class="btn-secondary-dark" id="btnBack2"><i data-lucide="arrow-left"></i> Zurück</button>
+                                    <button type="button" class="btn btn-primary" id="btnNext2">Weiter <i data-lucide="arrow-right"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- STEP 3 PANEL -->
+                            <div class="form-step-panel" data-panel="3">
+                                <div class="form-group checkbox-group" id="formGroupPrivacy" style="margin-bottom: 24px;">
+                                    <input type="checkbox" id="privacy" required>
+                                    <label for="privacy">Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Zuordnung für eventuelle Rückfragen dauerhaft gespeichert werden. Sie können diese Einwilligung jederzeit widerrufen. Mehr Details in der <a href="datenschutz.html" id="linkPrivacyPolicy">Datenschutzerklärung</a>.</label>
+                                </div>
+
+                                <!-- Cloudflare Turnstile Challenge -->
+                                <div class="form-group" style="display: flex; justify-content: center; margin: 24px 0;">
+                                    <div class="cf-turnstile" data-sitekey="0x4AAAAAADlxsmrOPF3EvoQb" id="turnstileWidget"></div>
+                                </div>
+
+                                <div class="form-nav-buttons">
+                                    <button type="button" class="btn-secondary-dark" id="btnBack3"><i data-lucide="arrow-left"></i> Zurück</button>
+                                    <button type="submit" class="btn btn-primary" id="btnSubmitContactForm">Jetzt senden <i data-lucide="send"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="siteFooter">
+        <div class="container">
+            <div class="footer-grid" id="footerGrid">
+                <div class="footer-column footer-logo-col footer-logo" id="footerColLogo">
+                    <img src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/dr-amely-campe-logo.webp" alt="Dr. Amely Campe Logo" id="footerLogoImage">
+                    <p id="footerMotto">Klarheit, Kommunikation und Entwicklung im tiermedizinischen Alltag.</p>
+                    
+                    <!-- Google Review Widget (Dark Version) -->
+                    <div class="google-review-badge" style="margin-top: 24px;">
+                        <div class="google-badge-left">
+                            <svg class="google-icon" viewBox="0 0 24 24">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l3.66-2.85z" />
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.85c.87-2.6 3.3-4.53 6.16-4.53z" />
+                            </svg>
+                            <div class="google-badge-text">
+                                <span class="google-title">Google Bewertung</span>
+                                <div class="google-stars">
+                                    <span class="rating-val">5.0</span>
+                                    <div class="stars-list">
+                                        <i data-lucide="star"></i>
+                                        <i data-lucide="star"></i>
+                                        <i data-lucide="star"></i>
+                                        <i data-lucide="star"></i>
+                                        <i data-lucide="star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://search.google.com/local/writereview?placeid=ChIJ592V5-N1cEcR2p6zU22r-2Y" target="_blank" rel="noopener" class="google-review-btn">
+                            <span>Bewerten</span>
+                            <i data-lucide="external-link" style="width:12px;height:12px;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column" id="footerColNav">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#services" id="footerLinkServices">Leistungen</a></li>
+                        <li class="footer-link"><a href="#seminare" id="footerLinkSeminars">Seminare</a></li>
+                        <li class="footer-link"><a href="#audience" id="footerLinkAudience">Zielgruppe</a></li>
+                        <li class="footer-link"><a href="#about" id="footerLinkAbout">Über mich</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column" id="footerColServices">
+                    <h4>Leistungen</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#services" id="footerLinkSupervision">Supervision</a></li>
+                        <li class="footer-link"><a href="#services" id="footerLinkMediation">Mediation</a></li>
+                        <li class="footer-link"><a href="#services" id="footerLinkTeams">Teamprozesse</a></li>
+                        <li class="footer-link"><a href="#seminare" id="footerLinkVortraege">Vorträge & Seminare</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column" id="footerColContact">
+                    <h4>Kontakt</h4>
+                    <ul class="footer-contact-info">
+                        <li>
+                            <i data-lucide="user"></i>
+                            <span>PD Dr. med. vet. Amely Campe</span>
+                        </li>
+                        <li>
+                            <i data-lucide="award"></i>
+                            <span>Fachtierärztin für Epidemiologie</span>
+                        </li>
+                        <li>
+                            <i data-lucide="heart-handshake"></i>
+                            <span>Supervisorin & Mediatorin</span>
+                        </li>
+                        <li>
+                            <i data-lucide="map-pin"></i>
+                            <span>Hannover, Deutschland</span>
+                        </li>
+                        <li>
+                            <i data-lucide="phone"></i>
+                            <a href="tel:+495111234567">+49 (0) 511 / 1234567</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom" id="footerBottomWrapper">
+                <p class="copyright" id="copyrightText">&copy; 2026 Dr. med. vet. Amely Campe. Alle Rechte vorbehalten.</p>
+                <div class="footer-bottom-links" id="footerLegalLinks">
+                    <a href="impressum.html" class="footer-bottom-link" id="footerLinkImpressum">Impressum</a>
+                    <a href="datenschutz.html" class="footer-bottom-link" id="footerLinkDatenschutz">Datenschutz</a>
+                    <a href="barrierefreiheit.html" class="footer-bottom-link" id="footerLinkBarrierefreiheit">Barrierefreiheit</a>
+                    <a href="admin.html" class="footer-bottom-link" id="footerLinkAdmin">Administration</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lucide Icons Library & Main JS -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide/dist/umd/lucide.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

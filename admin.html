@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-Bereich | Dr. med. vet. Amely Campe</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/dr-amely-campe-logo.webp">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-body">
+
+    <!-- LOCK SCREEN (AUTH GATE) -->
+    <div class="lockscreen" id="lockscreen">
+        <div class="lock-card">
+            <div class="success-icon" style="background-color: rgba(195, 155, 98, 0.1); color: var(--color-accent);">
+                <i data-lucide="lock"></i>
+            </div>
+            <h2>Admin-Bereich</h2>
+            <p>Bitte geben Sie Ihr Passwort ein, um auf das Seminar-Verwaltungstool zuzugreifen.</p>
+            <form id="loginForm">
+                <input type="password" id="password" placeholder="Passwort eingeben" required autofocus autocomplete="current-password">
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Anmelden <i data-lucide="unlock"></i></button>
+            </form>
+            <p id="errorMessage" style="color: #ef4444; margin-top: 16px; font-size: 0.88rem; display: none;">Falsches Passwort. Bitte versuchen Sie es erneut.</p>
+        </div>
+    </div>
+
+    <!-- MAIN DASHBOARD CONTENT -->
+    <div id="dashboardApp" style="display: none;">
+        
+        <!-- HEADER -->
+        <header class="admin-header">
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+                <a href="index.html" class="admin-logo">
+                    <img src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/dr-amely-campe-logo.webp" alt="Logo">
+                    <span>Dr. Amely Campe Dashboard</span>
+                </a>
+                <button id="btnLogout" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.85rem;">Abmelden <i data-lucide="log-out"></i></button>
+            </div>
+        </header>
+
+        <div class="container" style="margin-top: 40px; margin-bottom: 80px;">
+            <div class="dashboard-grid">
+                
+                <!-- SIDEBAR -->
+                <aside class="dashboard-sidebar">
+                    <ul class="sidebar-menu">
+                        <li><a href="#" class="sidebar-link active"><i data-lucide="book-open"></i> Seminare verwalten</a></li>
+                        <li><a href="index.html" class="sidebar-link"><i data-lucide="home"></i> Website ansehen</a></li>
+                    </ul>
+                </aside>
+
+                <!-- MAIN WORKSPACE -->
+                <main class="dashboard-main">
+                    
+                    <!-- TITLE ROW -->
+                    <div class="admin-title-row">
+                        <div>
+                            <h1>Seminare verwalten</h1>
+                            <p style="color: rgba(237, 242, 238, 0.5); font-size: 0.95rem; margin-top: 6px;">Erstellen, bearbeiten oder entfernen Sie Seminare auf Ihrer Homepage.</p>
+                        </div>
+                        <button class="btn btn-primary" id="btnOpenAddModal"><i data-lucide="plus"></i> Seminar hinzufügen</button>
+                    </div>
+
+                    <!-- STATS CARDS -->
+                    <div class="stats-row" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i data-lucide="book-marked"></i></div>
+                            <div class="stat-data">
+                                <h3 id="statTotalSeminars">0</h3>
+                                <p>Seminare Aktiv</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DATA BOARD CARD -->
+                    <div class="panel-card">
+                        <h2>Eingetragene Seminare</h2>
+                        
+                        <div class="admin-table-wrapper">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Seminar-Titel</th>
+                                        <th>Zielgruppe</th>
+                                        <th>Dauer</th>
+                                        <th style="width: 120px; text-align: right;">Aktionen</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminSeminarTableBody">
+                                    <!-- Dynamic rows loaded via Javascript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL POPUP FOR ADD/EDIT SEMINAR -->
+    <div class="modal" id="seminarModal">
+        <div class="modal-content">
+            <button class="modal-close" id="btnModalClose">&times;</button>
+            <h2 id="modalTitle">Seminar hinzufügen</h2>
+            
+            <form id="seminarForm">
+                <input type="hidden" id="editSeminarId">
+                
+                <div class="admin-form-group">
+                    <label for="semTitle">Seminar-Titel *</label>
+                    <input type="text" id="semTitle" class="admin-form-control" placeholder="z. B. Kommunikation mit Tierhalter:innen" required>
+                </div>
+                
+                <div class="admin-form-group">
+                    <label for="semAudience">Zielgruppe *</label>
+                    <input type="text" id="semAudience" class="admin-form-control" placeholder="z. B. Tierärzt:innen & Praxisteams" required>
+                </div>
+                
+                <div class="admin-form-group">
+                    <label for="semDuration">Dauer *</label>
+                    <input type="text" id="semDuration" class="admin-form-control" placeholder="z. B. Tagesseminar, 2 Stunden" required>
+                </div>
+                
+                <div class="admin-form-group">
+                    <label for="semDescription">Beschreibung *</label>
+                    <textarea id="semDescription" class="admin-form-control" placeholder="Kurze Beschreibung der Lehrinhalte und des Nutzens..." required></textarea>
+                </div>
+                
+                <div class="admin-form-actions">
+                    <button type="button" class="btn btn-secondary" style="padding: 12px 24px;" id="btnModalCancel">Abbrechen</button>
+                    <button type="submit" class="btn btn-primary" style="padding: 12px 24px;" id="btnSubmitForm">Speichern <i data-lucide="check"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lucide Icons & Scripting -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide/dist/umd/lucide.min.js"></script>
+    <script>
+        // Init Lucide
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            
+            // Password verification check (mock logic)
+            const loginForm = document.getElementById('loginForm');
+            const passwordField = document.getElementById('password');
+            const errorMessage = document.getElementById('errorMessage');
+            const lockscreen = document.getElementById('lockscreen');
+            const dashboardApp = document.getElementById('dashboardApp');
+            const btnLogout = document.getElementById('btnLogout');
+            
+            // Check session storage if already authenticated
+            if (sessionStorage.getItem('sf_admin_authenticated') === 'true') {
+                lockscreen.classList.add('hidden');
+                dashboardApp.style.display = 'block';
+                loadDashboardData();
+            }
+
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                // Simple password logic (we can use "admin" or "scholzfriese" or "campe")
+                const val = passwordField.value.trim().toLowerCase();
+                if (val === 'admin' || val === 'scholzfriese' || val === 'campe') {
+                    errorMessage.style.display = 'none';
+                    sessionStorage.setItem('sf_admin_authenticated', 'true');
+                    
+                    // Transition animations
+                    lockscreen.classList.add('hidden');
+                    setTimeout(() => {
+                        dashboardApp.style.display = 'block';
+                        loadDashboardData();
+                    }, 300);
+                } else {
+                    errorMessage.style.display = 'block';
+                    passwordField.value = '';
+                    passwordField.focus();
+                }
+            });
+
+            btnLogout.addEventListener('click', () => {
+                sessionStorage.removeItem('sf_admin_authenticated');
+                location.reload();
+            });
+
+            // MODAL AND FORM LOGIC
+            const seminarModal = document.getElementById('seminarModal');
+            const btnOpenAddModal = document.getElementById('btnOpenAddModal');
+            const btnModalClose = document.getElementById('btnModalClose');
+            const btnModalCancel = document.getElementById('btnModalCancel');
+            const seminarForm = document.getElementById('seminarForm');
+            
+            const openModal = (mode = 'add', data = null) => {
+                const modalTitle = document.getElementById('modalTitle');
+                const editIdInput = document.getElementById('editSeminarId');
+                const titleInput = document.getElementById('semTitle');
+                const audienceInput = document.getElementById('semAudience');
+                const durationInput = document.getElementById('semDuration');
+                const descInput = document.getElementById('semDescription');
+                
+                if (mode === 'add') {
+                    modalTitle.textContent = 'Seminar hinzufügen';
+                    editIdInput.value = '';
+                    titleInput.value = '';
+                    audienceInput.value = '';
+                    durationInput.value = '';
+                    descInput.value = '';
+                } else if (mode === 'edit' && data) {
+                    modalTitle.textContent = 'Seminar bearbeiten';
+                    editIdInput.value = data.id;
+                    titleInput.value = data.title;
+                    audienceInput.value = data.audience;
+                    durationInput.value = data.duration;
+                    descInput.value = data.description;
+                }
+                
+                seminarModal.classList.add('active');
+            };
+
+            const closeModal = () => {
+                seminarModal.classList.remove('active');
+            };
+
+            btnOpenAddModal.addEventListener('click', () => openModal('add'));
+            btnModalClose.addEventListener('click', closeModal);
+            btnModalCancel.addEventListener('click', closeModal);
+            
+            // FORM SUBMIT
+            seminarForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const id = document.getElementById('editSeminarId').value;
+                const title = document.getElementById('semTitle').value.trim();
+                const audience = document.getElementById('semAudience').value.trim();
+                const duration = document.getElementById('semDuration').value.trim();
+                const description = document.getElementById('semDescription').value.trim();
+                
+                let seminars = JSON.parse(localStorage.getItem('sf_seminars') || '[]');
+                
+                if (id) {
+                    // Update existing
+                    seminars = seminars.map(sem => {
+                        if (sem.id === id) {
+                            return { id, title, audience, duration, description };
+                        }
+                        return sem;
+                    });
+                } else {
+                    // Add new
+                    const newId = 'sem-' + Date.now();
+                    seminars.push({ id: newId, title, audience, duration, description });
+                }
+                
+                localStorage.setItem('sf_seminars', JSON.stringify(seminars));
+                closeModal();
+                loadDashboardData();
+            });
+        });
+
+        // DASHBOARD DATA MANAGEMENT
+        function loadDashboardData() {
+            const tableBody = document.getElementById('adminSeminarTableBody');
+            const statTotalSeminars = document.getElementById('statTotalSeminars');
+            
+            const seminars = JSON.parse(localStorage.getItem('sf_seminars') || '[]');
+            statTotalSeminars.textContent = seminars.length;
+            
+            tableBody.innerHTML = '';
+            
+            if (seminars.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="4" style="text-align: center; padding: 30px; color: rgba(237, 242, 238, 0.45);">Keine Seminare vorhanden. Fügen Sie ein neues hinzu.</td></tr>';
+                return;
+            }
+            
+            seminars.forEach(sem => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td style="font-weight: 600; color: #fff;">${escapeHtml(sem.title)}</td>
+                    <td><span class="admin-badge">${escapeHtml(sem.audience)}</span></td>
+                    <td>${escapeHtml(sem.duration)}</td>
+                    <td style="text-align: right;">
+                        <div class="admin-actions-cell" style="justify-content: flex-end;">
+                            <button class="btn-icon btn-icon-edit" onclick="editSeminar('${sem.id}')" title="Bearbeiten"><i data-lucide="edit-3"></i></button>
+                            <button class="btn-icon btn-icon-delete" onclick="deleteSeminar('${sem.id}')" title="Löschen"><i data-lucide="trash-2"></i></button>
+                        </div>
+                    </td>
+                `;
+                tableBody.appendChild(tr);
+            });
+            
+            // Re-render Lucide icons
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+        }
+
+        // Global functions for inline action buttons
+        window.editSeminar = function(id) {
+            const seminars = JSON.parse(localStorage.getItem('sf_seminars') || '[]');
+            const sem = seminars.find(s => s.id === id);
+            if (sem) {
+                // Open modal in edit mode with data
+                const editIdInput = document.getElementById('editSeminarId');
+                const titleInput = document.getElementById('semTitle');
+                const audienceInput = document.getElementById('semAudience');
+                const durationInput = document.getElementById('semDuration');
+                const descInput = document.getElementById('semDescription');
+                
+                document.getElementById('modalTitle').textContent = 'Seminar bearbeiten';
+                editIdInput.value = sem.id;
+                titleInput.value = sem.title;
+                audienceInput.value = sem.audience;
+                durationInput.value = sem.duration;
+                descInput.value = sem.description;
+                
+                document.getElementById('seminarModal').classList.add('active');
+            }
+        };
+
+        window.deleteSeminar = function(id) {
+            if (confirm('Sind Sie sicher, dass Sie dieses Seminar löschen möchten?')) {
+                let seminars = JSON.parse(localStorage.getItem('sf_seminars') || '[]');
+                seminars = seminars.filter(s => s.id !== id);
+                localStorage.setItem('sf_seminars', JSON.stringify(seminars));
+                loadDashboardData();
+            }
+        };
+
+        // Simple HTML escaping helper to prevent XSS
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+    </script>
+</body>
+</html>
