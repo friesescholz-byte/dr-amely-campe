@@ -49,9 +49,9 @@ const DEFAULT_SEMINARS = [
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. DATA SEEDING (Force update if user previously seeded 7 items)
+    // 1. DATA SEEDING (Only seed if empty or not present)
     const currentSems = JSON.parse(localStorage.getItem('sf_seminars'));
-    if (!currentSems || currentSems.length === 7) {
+    if (!currentSems || currentSems.length === 0) {
         localStorage.setItem('sf_seminars', JSON.stringify(DEFAULT_SEMINARS));
     }
 
