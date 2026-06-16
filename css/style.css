@@ -823,12 +823,12 @@ a {
 .audience-card-bg {
     position: absolute;
     inset: 0;
-    z-index: -1;
+    z-index: -2; /* Placed below the gradient overlay */
     background-size: cover;
     background-position: center;
-    opacity: 0.75; /* Vibrant and highly visible by default */
+    opacity: 1; /* Fully opaque by default */
     transition: var(--transition-smooth);
-    filter: grayscale(10%) brightness(0.9);
+    filter: brightness(0.95); /* Crisp, vibrant color */
 }
 
 /* Elegant visual overlay fade */
@@ -836,7 +836,7 @@ a {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(17, 40, 31, 0.95) 0%, rgba(17, 40, 31, 0.7) 60%, rgba(17, 40, 31, 0.2) 100%);
+    background: linear-gradient(to top, rgba(11, 24, 19, 0.95) 0%, rgba(11, 24, 19, 0.5) 50%, rgba(11, 24, 19, 0) 100%);
     z-index: -1;
     transition: var(--transition-smooth);
 }
@@ -850,13 +850,13 @@ a {
 }
 
 .audience-card:hover .audience-card-bg {
-    opacity: 0.35; /* Fades down slightly on hover while remaining visible */
-    transform: scale(1.06);
-    filter: grayscale(50%) brightness(0.6);
+    opacity: 1; /* Keep fully opaque */
+    transform: scale(1.05);
+    filter: brightness(0.75); /* Dim slightly only on hover to enhance contrast for paragraph text */
 }
 
 .audience-card:hover::after {
-    background: linear-gradient(to top, rgba(17, 40, 31, 0.98) 0%, rgba(17, 40, 31, 0.5) 60%, rgba(17, 40, 31, 0.1) 100%);
+    background: linear-gradient(to top, rgba(11, 24, 19, 0.98) 0%, rgba(11, 24, 19, 0.7) 60%, rgba(11, 24, 19, 0.1) 100%);
 }
 
 .audience-card-num {
@@ -2134,9 +2134,10 @@ textarea.admin-form-control {
 
 /* --- TESTIMONIALS SECTION --- */
 .testimonials-section {
-    background-color: var(--color-primary-soft);
+    background: radial-gradient(circle at 80% 80%, rgba(45, 160, 113, 0.12), transparent 55%), #0a1712; /* Deep dark forest green with a premium radial glow */
     position: relative;
     overflow: hidden;
+    padding: var(--section-padding) 0;
 }
 
 .testimonials-section::before {
@@ -2146,13 +2147,26 @@ textarea.admin-form-control {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, rgba(17, 40, 31, 0) 0%, rgba(17, 40, 31, 0.05) 50%, rgba(17, 40, 31, 0) 100%);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0) 100%);
 }
 
 .testimonials-intro {
     text-align: center;
     max-width: 700px;
     margin: 0 auto 60px auto;
+}
+
+.testimonials-intro .eyebrow {
+    color: var(--color-accent);
+}
+
+.testimonials-intro h2 {
+    color: #FAF9F5; /* Cream white for high contrast */
+    margin-bottom: 20px;
+}
+
+.testimonials-intro .lead {
+    color: rgba(250, 249, 245, 0.75);
 }
 
 .testimonials-grid {
@@ -2162,14 +2176,16 @@ textarea.admin-form-control {
 }
 
 .testimonial-card {
-    background: var(--color-bg-white);
-    border: 1px solid rgba(17, 40, 31, 0.05);
-    border-radius: var(--radius-md);
-    padding: 40px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 24px;
+    padding: 48px 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: var(--shadow-subtle);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
     transition: var(--transition-smooth);
     position: relative;
 }
@@ -2177,50 +2193,52 @@ textarea.admin-form-control {
 .testimonial-card::before {
     content: '“';
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 24px;
+    right: 36px;
     font-family: var(--font-serif);
-    font-size: 5rem;
-    color: rgba(45, 160, 113, 0.08);
+    font-size: 6.5rem;
+    color: rgba(45, 160, 113, 0.12);
     line-height: 1;
 }
 
 .testimonial-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-hover);
-    border-color: rgba(45, 160, 113, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 30px rgba(45, 160, 113, 0.15);
+    border-color: rgba(45, 160, 113, 0.45);
 }
 
 .testimonial-quote {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--color-text-dark);
-    margin-bottom: 30px;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: rgba(250, 249, 245, 0.9);
+    margin-bottom: 35px;
     position: relative;
     z-index: 1;
+    font-style: italic;
+    font-weight: 300;
 }
 
 .testimonial-author {
     display: flex;
     align-items: center;
-    gap: 16px;
-    border-top: 1px solid rgba(17, 40, 31, 0.06);
-    padding-top: 20px;
+    gap: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 24px;
 }
 
 .testimonial-avatar {
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-    color: var(--color-bg-cream);
+    background: linear-gradient(135deg, #FAF9F5 0%, #D9C3A5 100%); /* Champagne-gold gradient */
+    color: #0b1813;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 600;
-    font-size: 0.95rem;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 10px rgba(17, 40, 31, 0.1);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .testimonial-meta {
@@ -2231,21 +2249,22 @@ textarea.admin-form-control {
 .testimonial-name {
     font-family: var(--font-sans);
     font-weight: 600;
-    font-size: 0.98rem;
-    color: var(--color-primary);
+    font-size: 1.02rem;
+    color: #FAF9F5;
 }
 
 .testimonial-role {
-    font-size: 0.82rem;
-    color: var(--color-text-muted);
-    margin-top: 2px;
+    font-size: 0.85rem;
+    color: rgba(250, 249, 245, 0.55);
+    margin-top: 4px;
 }
 
 .testimonial-stars {
     display: flex;
     gap: 4px;
-    margin-bottom: 12px;
-    color: #fbbf24;
+    margin-bottom: 16px;
+    color: #F59E0B; /* Warm orange-gold */
+    filter: drop-shadow(0 2px 8px rgba(245, 158, 11, 0.25));
 }
 
 .testimonial-stars i {
