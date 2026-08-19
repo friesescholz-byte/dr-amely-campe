@@ -46,72 +46,140 @@
             </button>
             
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#services" class="nav-link" id="navLinkServices">Leistungen</a></li>
+                <li><a href="#home" class="nav-link active" id="navLinkStart">Start</a></li>
+                <li><a href="#services" class="nav-link" id="navLinkSupervision">Supervision</a></li>
+                <li><a href="#services" class="nav-link" id="navLinkMediation">Mediation</a></li>
                 <li><a href="#seminare" class="nav-link" id="navLinkSeminars">Seminare</a></li>
-                <li><a href="#audience" class="nav-link" id="navLinkAudience">Zielgruppe</a></li>
                 <li><a href="#about" class="nav-link" id="navLinkAbout">Über mich</a></li>
                 <li><a href="#contact" class="nav-link" id="navLinkContact">Kontakt</a></li>
-                <li class="nav-cta-mobile"><a href="#contact" class="btn btn-primary" id="mobileMenuCta">Gespräch vereinbaren</a></li>
+                <li class="nav-cta-mobile"><a href="#contact" class="btn-sage" id="mobileMenuCta">TERMIN ANFRAGEN</a></li>
             </ul>
             
             <div class="nav-right-ctas" id="headerCtaWrapper">
-                <a href="tel:+495111234567" class="header-phone" id="headerPhoneLink">
-                    <i data-lucide="phone"></i>
-                    <span>+49 (0) 511 / 1234567</span>
-                </a>
-                <a href="#contact" class="btn btn-primary" style="padding: 12px 28px; font-size: 0.9rem;" id="headerCtaBtn">Gespräch vereinbaren</a>
+                <a href="#contact" class="btn-sage" id="headerCtaBtn">TERMIN ANFRAGEN</a>
             </div>
         </div>
     </header>
 
     <main id="mainContent">
         
-        <!-- HERO SECTION -->
-        <section class="section hero" id="home">
-            <div class="container grid-2">
-                <div class="hero-content reveal" id="heroTextContainer">
-                    <span class="eyebrow" id="heroEyebrow">Supervision · Mediation · Seminare für die Tiermedizin</span>
-                    <h1 id="heroHeadline">Wenn berufliche Belastung Raum braucht.</h1>
-                    <p class="lead" id="heroLeadText">Ich begleite Tierärzt:innen, Praxisteams und Führungskräfte dabei, schwierige Situationen zu sortieren, Konflikte besser zu verstehen und wieder klarer ins Handeln zu kommen.</p>
-                    <div class="hero-actions-container" id="heroCtaContainer">
-                        <a href="#contact" class="btn btn-primary" id="heroPrimaryCta">Gespräch vereinbaren <i data-lucide="arrow-right"></i></a>
-                        <div class="hero-phone-cta" id="heroPhoneCta">
-                            <i data-lucide="phone"></i>
-                            <span>Oder direkt anrufen: <a href="tel:+495111234567">+49 (0) 511 / 1234567</a></span>
-                        </div>
-                        <div class="hero-trust-badge" style="display: flex; align-items: center; gap: 8px; margin-top: 10px;">
-                            <div style="display: flex; gap: 2px;">
-                                <i data-lucide="star" style="width: 14px; height: 14px; fill: #FFB300; color: #FFB300;"></i>
-                                <i data-lucide="star" style="width: 14px; height: 14px; fill: #FFB300; color: #FFB300;"></i>
-                                <i data-lucide="star" style="width: 14px; height: 14px; fill: #FFB300; color: #FFB300;"></i>
-                                <i data-lucide="star" style="width: 14px; height: 14px; fill: #FFB300; color: #FFB300;"></i>
-                                <i data-lucide="star" style="width: 14px; height: 14px; fill: #FFB300; color: #FFB300;"></i>
-                            </div>
-                            <span style="font-size: 0.92rem; color: var(--color-text-muted);"><strong>5.0 Sterne</strong> auf Google</span>
-                        </div>
+        <!-- HERO SECTION (SCREENSHOT 1) -->
+        <section class="section hero-section" id="home">
+            <div class="container hero-grid">
+                <!-- Left: Aerial Landscape Photo with Slider Dots -->
+                <div class="hero-image-col reveal" id="heroImageContainer">
+                    <div class="hero-img-container" id="heroImageWrapper">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80" alt="Weite Landschaft aus der Vogelperspektive" id="heroLandscapeImg" class="hero-landscape-img">
+                    </div>
+                    <div class="slider-indicator" id="sliderDots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
                     </div>
                 </div>
-                <div class="hero-image reveal" id="heroImageContainer">
-                    <div class="hero-image-wrapper" id="heroImageWrapper">
-                        <img src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/AC_02_ergebnis.webp" alt="Dr. Amely Campe Portrait" id="heroPortraitImage">
+
+                <!-- Right: Hero Typography & CTAs -->
+                <div class="hero-content-col reveal" id="heroTextContainer">
+                    <span class="hero-eyebrow" id="heroEyebrow">SUPERVISION · MEDIATION · SEMINARE</span>
+                    <h1 class="hero-title" id="heroHeadline">
+                        Nimm dir eine<br>
+                        Auszeit — und sieh<br>
+                        deinen Beruf aus<br>
+                        der <span class="text-accent-italic">Vogelperspektive.</span>
+                    </h1>
+                    <p class="hero-subline" id="heroLeadText">
+                        Supervision für Tierärztinnen und Tierärzte. Aus tierärztlicher Praxis, mit fundierter Beratungsausbildung.
+                    </p>
+                    <div class="hero-actions" id="heroCtaContainer">
+                        <a href="#contact" class="btn-sage" id="heroPrimaryCta">TERMIN ANFRAGEN</a>
+                        <a href="#services" class="btn-text-link" id="heroSecondaryCta">Mein Angebot kennenlernen <span class="arrow-down">↓</span></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- STATEMENT SECTION -->
-        <section class="section statement-section" id="statement">
-            <div class="container">
-                <div class="statement-content reveal" id="statementContentWrapper">
-                    <span class="eyebrow" id="statementEyebrow">Perspektivenwechsel</span>
-                    <h2 id="statementHeading">Manchmal braucht es Abstand, um wieder klar zu sehen.</h2>
-                    <p class="lead" id="statementParagraph">Der Alltag in der Tiermedizin ist intensiv. Viele Entscheidungen, viele Erwartungen, viele Gespräche und oft wenig Zeit, um innezuhalten.<br><br>Wenn Belastung, Konflikte oder Unsicherheit zu viel Raum einnehmen, kann ein geschützter Blick von außen helfen. In meiner Arbeit geht es darum, Zusammenhänge sichtbar zu machen, neue Perspektiven zu entwickeln und Lösungen zu finden, die zu Ihnen, Ihrem Team und Ihrer beruflichen Realität passen.</p>
+        <!-- SECTION 2: WIEDERERKENNUNG (SCREENSHOT 2) -->
+        <section class="section wiedererkennung-section" id="wiedererkennung">
+            <div class="container wiedererkennung-grid">
+                <!-- Left Column -->
+                <div class="wiedererkennung-left reveal" id="wiedererkennungLeft">
+                    <span class="eyebrow-dash"><span class="dash">—</span> WIEDERERKENNUNG</span>
+                    <h2 class="wiedererkennung-title">Kennst du diese<br>Momente?</h2>
+                    <p class="wiedererkennung-lead">
+                        Tierärztinnen und Tierärzte arbeiten unter Druck, der von außen kaum gesehen wird. Es muss nicht so bleiben.
+                    </p>
+                </div>
+
+                <!-- Right Column: 4 Numbered Moments -->
+                <div class="wiedererkennung-right reveal" id="wiedererkennungRight">
+                    <div class="moment-item">
+                        <span class="moment-num">01</span>
+                        <p class="moment-text">Der Tierhalter ignoriert deinen Rat — und das Tier leidet weiter.</p>
+                    </div>
+                    <div class="moment-item">
+                        <span class="moment-num">02</span>
+                        <p class="moment-text">Spannungen, Streit, halb ausgesprochene Vorwürfe im Team.</p>
+                    </div>
+                    <div class="moment-item">
+                        <span class="moment-num">03</span>
+                        <p class="moment-text">Die Praxis aktiv führen — und gleichzeitig der zweifelnde Mensch bleiben.</p>
+                    </div>
+                    <div class="moment-item">
+                        <span class="moment-num">04</span>
+                        <p class="moment-text">Unpünktliche Klienten, die mit der Online-Bewertung drohen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: KOMBINATION & QUALIFIKATIONEN (SCREENSHOT 3) -->
+        <section class="section combination-section" id="qualifikationen">
+            <div class="container combination-grid">
+                <!-- Left Column: Big Statement Headline -->
+                <div class="combination-left reveal" id="combinationLeft">
+                    <h2 class="combination-title">
+                        Tierärztin <span class="text-accent-italic">und</span><br>
+                        <span class="text-italic-serif">Supervisorin.</span>
+                    </h2>
+                    <p class="combination-lead">
+                        Eine Kombination, die in dieser Tiefe selten ist.
+                    </p>
+                </div>
+
+                <!-- Right Column: Schlamm/Graubraun Card Box -->
+                <div class="combination-right-card reveal" id="combinationRightCard">
+                    <p class="card-intro-text">
+                        Ich kenne die schwierigen Tierhalter, die Teamkonflikte, den Führungsdruck, das Burnout-Risiko — aus eigener veterinärmedizinischer Praxis. Diese doppelte Perspektive ermöglicht tiefes Verstehen ohne lange Erklärungen.
+                    </p>
+                    <hr class="card-divider">
+                    <div class="card-qualifications">
+                        <span class="qualifications-eyebrow">QUALIFIKATIONEN</span>
+                        <ul class="qualifications-list">
+                            <li>
+                                <span class="qual-bullet">•</span>
+                                <span class="qual-content"><strong>Tierärztin</strong> · Tierärztliche Hochschule Hannover (TiHo)</span>
+                            </li>
+                            <li>
+                                <span class="qual-bullet">•</span>
+                                <span class="qual-content"><strong>Zertifizierte Supervisorin</strong> · Leibniz Universität Hannover · IACC-anerkannt</span>
+                            </li>
+                            <li>
+                                <span class="qual-bullet">•</span>
+                                <span class="qual-content"><strong>Zertifizierte Mediatorin</strong> · GfK nach Marshall Rosenberg, Steyerberg</span>
+                            </li>
+                            <li>
+                                <span class="qual-bullet">•</span>
+                                <span class="qual-content"><strong>Zertifizierte Erwachsenenbildnerin</strong> · TU Braunschweig — Hochschuldidaktik</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- SERVICES SECTION -->
-        <section class="section section-alt" id="services">
+        <section class="section services-section" id="services">
             <div class="container">
                 <div class="services-header reveal" id="servicesHeader">
                     <span class="eyebrow" id="servicesEyebrow">Mein Angebot</span>
@@ -161,12 +229,12 @@
         </section>
 
         <!-- SEMINARS SECTION -->
-        <section class="section" id="seminare">
+        <section class="section seminar-section" id="seminare">
             <div class="container">
                 <div class="seminar-header reveal" id="seminarTextWrapper">
                     <span class="eyebrow" id="seminarEyebrow">Seminarkatalog</span>
                     <h2 id="seminarHeadline">Seminare, die nah am beruflichen Alltag sind.</h2>
-                    <p class="lead" id="seminarLeadText" style="margin-top: 20px;">In meinen Seminaren und Vorträgen geht es um Themen, die Tierärzt:innen, Praxisteams und Führungskräfte wirklich beschäftigen. Die Inhalte sind praxisnah, verständlich und auf echte Situationen übertragbar.</p>
+                    <p class="lead" id="seminarLeadText" style="margin-top: 18px;">In meinen Seminaren und Vorträgen geht es um Themen, die Tierärzt:innen, Praxisteams und Führungskräfte wirklich beschäftigen. Die Inhalte sind praxisnah, verständlich und auf echte Situationen übertragbar.</p>
                 </div>
                 
                 <!-- DYNAMIC SEMINAR CARDS GRID (PRO MAX DESIGN) -->
@@ -174,8 +242,8 @@
                     <!-- Dynamic rendering from js/main.js -->
                 </div>
                 
-                <div style="text-align: center; margin-top: 60px;" class="reveal" id="seminarActionWrapper">
-                    <a href="#contact" class="btn btn-primary service-contact-link" data-service="seminar" id="btnSeminarContact">Seminarthemen anfragen <i data-lucide="mail"></i></a>
+                <div style="text-align: center; margin-top: 50px;" class="reveal" id="seminarActionWrapper">
+                    <a href="#contact" class="btn-sage service-contact-link" data-service="seminar" id="btnSeminarContact">Seminarthemen anfragen</a>
                 </div>
             </div>
         </section>
@@ -215,7 +283,7 @@
                     <div class="audience-card" id="audienceNachwuchs">
                         <div class="audience-card-bg" style="background-image: url('https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/nachwuchskraefte.webp');"></div>
                         <span class="audience-card-num">04</span>
-                        <h3>Nachwucskräfte</h3>
+                        <h3>Nachwuchskräfte</h3>
                         <p>Orientierung beim Berufseinstieg, zur Rollenfindung und Burnout-Prävention.</p>
                     </div>
                     
@@ -238,7 +306,7 @@
         </section>
 
         <!-- ABOUT SECTION -->
-        <section class="section section-alt" id="about">
+        <section class="section about-section" id="about">
             <div class="container grid-2 about-grid">
                 <div class="about-image reveal" id="aboutImageWrapper">
                     <div class="about-image-wrapper">
@@ -259,7 +327,7 @@
                     </div>
                     
                     <!-- Google Review Widget -->
-                    <div class="google-review-badge light-bg" style="margin-top: 30px; margin-bottom: 10px;">
+                    <div class="google-review-badge light-bg" style="margin-top: 24px; margin-bottom: 10px;">
                         <div class="google-badge-left">
                             <svg class="google-icon" viewBox="0 0 24 24">
                                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -287,8 +355,8 @@
                         </a>
                     </div>
 
-                    <div style="margin-top: 30px;" id="aboutLinkContainer">
-                        <a href="#contact" class="btn btn-primary" id="btnAboutContact">Gespräch vereinbaren <i data-lucide="calendar"></i></a>
+                    <div style="margin-top: 28px;" id="aboutLinkContainer">
+                        <a href="#contact" class="btn-sage" id="btnAboutContact">Gespräch vereinbaren</a>
                     </div>
                 </div>
             </div>
