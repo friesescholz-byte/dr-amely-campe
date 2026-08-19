@@ -108,7 +108,44 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll(); // Run immediately
 
-    // 6. MULTI-STEP WIZARD FORM & CF TURNSTILE HANDLING
+    // 6. HERO SLIDESHOW CONTROLLER (5-second auto-advance + interactive dots)
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    const heroDots = document.querySelectorAll('.slider-indicator .dot');
+    let currentHeroSlide = 0;
+    let heroInterval = null;
+
+    function goToHeroSlide(index) {
+        if (heroSlides.length === 0) return;
+        currentHeroSlide = (index + heroSlides.length) % heroSlides.length;
+        heroSlides.forEach((s, idx) => {
+            s.classList.toggle('active', idx === currentHeroSlide);
+        });
+        heroDots.forEach((d, idx) => {
+            d.classList.toggle('active', idx === currentHeroSlide);
+        });
+    }
+
+    function startHeroSlideShow() {
+        if (heroInterval) clearInterval(heroInterval);
+        heroInterval = setInterval(() => {
+            goToHeroSlide(currentHeroSlide + 1);
+        }, 5000);
+    }
+
+    heroDots.forEach((dot) => {
+        dot.addEventListener('click', (e) => {
+            e.preventDefault();
+            const idx = parseInt(dot.getAttribute('data-index'), 10);
+            goToHeroSlide(idx);
+            startHeroSlideShow(); // restart the 5s timer on manual click
+        });
+    });
+
+    if (heroSlides.length > 0) {
+        startHeroSlideShow();
+    }
+
+    // 7. MULTI-STEP WIZARD FORM & CF TURNSTILE HANDLING
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         // Wizard navigation buttons
@@ -144,14 +181,8 @@ document.addEventListener('DOMContentLoaded', () => {
             else line2.classList.remove('active');
         };
 
-        // Step 1 -> Step 2
+        // Step 1 -> Step 2 (Message is optional)
         btnNext1.addEventListener('click', () => {
-            const msg = document.getElementById('message').value.trim();
-            if (!msg) {
-                alert('Bitte beschreiben Sie kurz Ihr Anliegen.');
-                document.getElementById('message').focus();
-                return;
-            }
             showStep(2);
         });
 

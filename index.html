@@ -47,8 +47,7 @@
             
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link active" id="navLinkStart">Start</a></li>
-                <li><a href="#services" class="nav-link" id="navLinkSupervision">Supervision</a></li>
-                <li><a href="#services" class="nav-link" id="navLinkMediation">Mediation</a></li>
+                <li><a href="#services" class="nav-link" id="navLinkServices">Mein Angebot</a></li>
                 <li><a href="#seminare" class="nav-link" id="navLinkSeminars">Seminare</a></li>
                 <li><a href="#about" class="nav-link" id="navLinkAbout">Über mich</a></li>
                 <li><a href="#contact" class="nav-link" id="navLinkContact">Kontakt</a></li>
@@ -63,19 +62,30 @@
 
     <main id="mainContent">
         
-        <!-- HERO SECTION (SCREENSHOT 1) -->
+        <!-- HERO SECTION (SCREENSHOT 1 WITH 4-SLIDE SMOOTH SLIDESHOW) -->
         <section class="section hero-section" id="home">
             <div class="container hero-grid">
-                <!-- Left: Aerial Landscape Photo with Slider Dots -->
+                <!-- Left: Slideshow with 4 Images & Interactive Indicator -->
                 <div class="hero-image-col reveal" id="heroImageContainer">
-                    <div class="hero-img-container" id="heroImageWrapper">
-                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80" alt="Weite Landschaft aus der Vogelperspektive" id="heroLandscapeImg" class="hero-landscape-img">
+                    <div class="hero-slider-wrapper" id="heroSlider">
+                        <div class="hero-slide active" data-slide="0">
+                            <img src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/Vogelperspektive/pexels-jan-solance-328305885-17865896_ergebnis.webp" alt="Dr. Amely Campe - Vogelperspektive und Weite" class="hero-slide-img">
+                        </div>
+                        <div class="hero-slide" data-slide="1">
+                            <img src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/Vogelperspektive/pexels-markusspiske-92657_ergebnis.webp" alt="Dr. Amely Campe - Natur und Ruhe" class="hero-slide-img">
+                        </div>
+                        <div class="hero-slide" data-slide="2">
+                            <img src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/Vogelperspektive/pexels-viktor-svabik-1268767731-23844513_ergebnis.webp" alt="Dr. Amely Campe - Perspektivwechsel" class="hero-slide-img">
+                        </div>
+                        <div class="hero-slide" data-slide="3">
+                            <img src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/photo-1500382017468-9049fed747ef_ergebnis.webp" alt="Dr. Amely Campe - Weite Landschaft" class="hero-slide-img">
+                        </div>
                     </div>
                     <div class="slider-indicator" id="sliderDots">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
+                        <button class="dot active" data-index="0" aria-label="Slide 1"></button>
+                        <button class="dot" data-index="1" aria-label="Slide 2"></button>
+                        <button class="dot" data-index="2" aria-label="Slide 3"></button>
+                        <button class="dot" data-index="3" aria-label="Slide 4"></button>
                     </div>
                 </div>
 
@@ -178,52 +188,136 @@
             </div>
         </section>
 
-        <!-- SERVICES SECTION -->
+        <!-- SERVICES / ANGEBOT SECTION (SCREENSHOTS 1-4) -->
         <section class="section services-section" id="services">
             <div class="container">
-                <div class="services-header reveal" id="servicesHeader">
-                    <span class="eyebrow" id="servicesEyebrow">Mein Angebot</span>
-                    <h2 id="servicesTitle">Wobei ich Sie begleite</h2>
+                <!-- Section Header -->
+                <div class="services-main-header reveal" id="servicesHeader">
+                    <span class="eyebrow-dash" id="servicesEyebrow"><span class="dash">—</span> ANGEBOT</span>
+                    <h2 class="services-main-title" id="servicesTitle">
+                        Vier Wege, einen Schritt<br>
+                        zurückzutreten.
+                    </h2>
                 </div>
                 
-                <div class="services-grid stagger-container" id="servicesGrid">
+                <!-- 4 Alternating Pathway Rows -->
+                <div class="services-pathways-list" id="servicesList">
                     
-                    <div class="service-card" id="serviceSupervision">
-                        <div class="service-top">
-                            <div class="service-icon"><i data-lucide="eye"></i></div>
-                            <h3>Supervision</h3>
-                            <p>Für Situationen, die belasten, wiederkehren oder innerlich nachwirken.</p>
+                    <!-- 01: Supervision (Image Left, Content Right) -->
+                    <div class="service-pathway-row reveal" id="serviceSupervision">
+                        <div class="service-row-image">
+                            <div class="service-img-wrapper">
+                                <img src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/pexels-pinkpress-7343028_ergebnis.webp" alt="Supervision für Tierärztinnen und Tierärzte" class="service-img">
+                            </div>
                         </div>
-                        <a href="#contact" class="btn-text service-contact-link" data-service="supervision" id="linkSupervisionContact">Anfrage senden <i data-lucide="arrow-right"></i></a>
-                    </div>
-                    
-                    <div class="service-card" id="serviceMediation">
-                        <div class="service-top">
-                            <div class="service-icon"><i data-lucide="users"></i></div>
-                            <h3>Mediation</h3>
-                            <p>Für Konflikte, die geklärt werden wollen, bevor sie die Zusammenarbeit dauerhaft erschweren.</p>
+                        <div class="service-row-content">
+                            <span class="service-item-eyebrow">
+                                <span class="item-num">01</span>
+                                <span class="slash">/</span>
+                                SUPERVISION
+                            </span>
+                            <h3 class="service-item-title">Supervision</h3>
+                            <p class="service-item-desc">
+                                Ein geschützter Raum zur Reflexion beruflicher Belastungen, komplexer Behandlungsfälle und emotional fordernder Situationen im tiermedizinischen Alltag.
+                            </p>
+                            <a href="#contact" class="service-detail-link service-contact-link" data-service="supervision" id="linkSupervisionContact">
+                                <span>Mehr Infos zur Supervision anfragen</span>
+                                <span class="arrow">→</span>
+                            </a>
                         </div>
-                        <a href="#contact" class="btn-text service-contact-link" data-service="mediation" id="linkMediationContact">Anfrage senden <i data-lucide="arrow-right"></i></a>
                     </div>
-                    
-                    <div class="service-card" id="serviceTeamprozesse">
-                        <div class="service-top">
-                            <div class="service-icon"><i data-lucide="git-branch"></i></div>
-                            <h3>Teamprozesse</h3>
-                            <p>Für Praxen, Behörden und Organisationen, die wieder besser miteinander arbeiten möchten.</p>
+
+                    <!-- 02: Mediation (Content Left, Image Right) -->
+                    <div class="service-pathway-row reverse reveal" id="serviceMediation">
+                        <div class="service-row-content">
+                            <span class="service-item-eyebrow">
+                                <span class="item-num">02</span>
+                                <span class="slash">/</span>
+                                MEDIATION
+                            </span>
+                            <h3 class="service-item-title">Mediation</h3>
+                            <p class="service-item-desc">
+                                Konfliktlösung für Tierarztpraxen und ihre Teams nach der Gewaltfreien Kommunikation. Als Einzel- oder Co-Mediation.
+                            </p>
+                            <a href="#contact" class="service-detail-link service-contact-link" data-service="mediation" id="linkMediationContact">
+                                <span>Mehr Infos zur Mediation anfragen</span>
+                                <span class="arrow">→</span>
+                            </a>
                         </div>
-                        <a href="#contact" class="btn-text service-contact-link" data-service="teamprozess" id="linkTeamprozesseContact">Anfrage senden <i data-lucide="arrow-right"></i></a>
-                    </div>
-                    
-                    <div class="service-card" id="serviceSeminare">
-                        <div class="service-top">
-                            <div class="service-icon"><i data-lucide="book-open"></i></div>
-                            <h3>Seminare & Vorträge</h3>
-                            <p>Für Kommunikation, Führung, Mental Health und die besonderen Herausforderungen der Tiermedizin.</p>
+                        <div class="service-row-image">
+                            <div class="service-img-wrapper">
+                                <img src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/pexels-valeriya-27969866_ergebnis.webp" alt="Mediation für Praxisteams" class="service-img">
+                            </div>
                         </div>
-                        <a href="#contact" class="btn-text service-contact-link" data-service="seminar" id="linkSeminareAnchor">Anfrage senden <i data-lucide="arrow-right"></i></a>
                     </div>
-                    
+
+                    <!-- 03: Organisationsberatung (Image Left, Content Right) -->
+                    <div class="service-pathway-row reveal" id="serviceOrganisationsberatung">
+                        <div class="service-row-image">
+                            <div class="service-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80" alt="Weite Landschaft Organisationsberatung" class="service-img">
+                            </div>
+                        </div>
+                        <div class="service-row-content">
+                            <span class="service-item-eyebrow">
+                                <span class="item-num">03</span>
+                                <span class="slash">/</span>
+                                ORGANISATIONSBERATUNG
+                            </span>
+                            <h3 class="service-item-title">Organisationsberatung</h3>
+                            <p class="service-item-desc">
+                                Stärken und Schwächen Ihrer Praxis sichtbar machen. Neue Ziele setzen, Strukturen anpassen — gemeinsam mit dem Team.
+                            </p>
+                            <a href="#contact" class="service-detail-link service-contact-link" data-service="teamprozess" id="linkTeamprozesseContact">
+                                <span>Mehr Infos zur Organisationsberatung anfragen</span>
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 04: Seminare & Workshops (Content Left, Image Right) -->
+                    <div class="service-pathway-row reverse reveal" id="serviceSeminare">
+                        <div class="service-row-content">
+                            <span class="service-item-eyebrow">
+                                <span class="item-num">04</span>
+                                <span class="slash">/</span>
+                                SEMINARE & WORKSHOPS
+                            </span>
+                            <h3 class="service-item-title">Seminare & Workshops</h3>
+                            <p class="service-item-desc">
+                                Praxisrelevante Themen — von Kommunikation mit Tierhaltern bis zu psychischer Gesundheit in der Tiermedizin.
+                            </p>
+                            <a href="#contact" class="service-detail-link service-contact-link" data-service="seminar" id="linkSeminareAnchor">
+                                <span>Mehr Infos zu den Seminaren anfragen</span>
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+                        <div class="service-row-image">
+                            <div class="service-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80" alt="Seminar Stuhlkreis im hellen Raum" class="service-img">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PHILOSOPHY / STATEMENT QUOTE SECTION (SCREENSHOT) -->
+        <section class="section quote-section" id="philosophie">
+            <div class="container">
+                <div class="quote-container reveal" id="quoteContainer">
+                    <div class="quote-symbol" aria-hidden="true">
+                        <svg width="42" height="34" viewBox="0 0 48 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.44 38C5.76 38 0 32.32 0 24.32C0 14.72 8 6.08 20.48 0L23.04 4.16C15.68 8.32 12.16 13.76 11.52 18.24C12.8 17.6 14.72 17.28 16.64 17.28C21.76 17.28 25.6 20.8 25.6 26.56C25.6 32.96 20.48 38 13.44 38ZM35.84 38C28.16 38 22.4 32.32 22.4 24.32C22.4 14.72 30.4 6.08 42.88 0L45.44 4.16C38.08 8.32 34.56 13.76 33.92 18.24C35.2 17.6 37.12 17.28 39.04 17.28C44.16 17.28 48 20.8 48 26.56C48 32.96 42.88 38 35.84 38Z" fill="var(--color-accent-teal)"/>
+                        </svg>
+                    </div>
+                    <blockquote class="quote-statement">
+                        Die Distanz erleichtert das Verstehen von verhärteten und scheinbar undurchdringlichen Verhältnissen. Sie beflügelt die Fantasie, verändert Perspektiven, ermutigt zu neuen Wegen.
+                    </blockquote>
+                    <div class="quote-author-tag">
+                        <span class="dash">—</span> DR. AMELY CAMPE
+                    </div>
                 </div>
             </div>
         </section>
@@ -232,7 +326,7 @@
         <section class="section seminar-section" id="seminare">
             <div class="container">
                 <div class="seminar-header reveal" id="seminarTextWrapper">
-                    <span class="eyebrow" id="seminarEyebrow">Seminarkatalog</span>
+                    <span class="eyebrow-dash" id="seminarEyebrow"><span class="dash">—</span> SEMINARKATALOG</span>
                     <h2 id="seminarHeadline">Seminare, die nah am beruflichen Alltag sind.</h2>
                     <p class="lead" id="seminarLeadText" style="margin-top: 18px;">In meinen Seminaren und Vorträgen geht es um Themen, die Tierärzt:innen, Praxisteams und Führungskräfte wirklich beschäftigen. Die Inhalte sind praxisnah, verständlich und auf echte Situationen übertragbar.</p>
                 </div>
@@ -252,7 +346,7 @@
         <section class="section audience-section" id="audience">
             <div class="container">
                 <div class="audience-intro reveal" id="audienceIntro">
-                    <span class="eyebrow" id="audienceEyebrow">Zielgruppe</span>
+                    <span class="eyebrow-dash" id="audienceEyebrow"><span class="dash">—</span> ZIELGRUPPE</span>
                     <h2 id="audienceHeadline">Für Menschen, die Verantwortung tragen.</h2>
                     <p class="lead" id="audienceLeadText">Meine Arbeit richtet sich an Menschen, die in der Tiermedizin viel leisten und dabei nicht den Kontakt zu sich selbst, ihrem Team oder ihrem beruflichen Anspruch verlieren möchten.</p>
                 </div>
@@ -315,7 +409,7 @@
                 </div>
                 
                 <div class="about-content reveal" id="aboutTextWrapper">
-                    <span class="eyebrow" id="aboutEyebrow">Hintergrund</span>
+                    <span class="eyebrow-dash" id="aboutEyebrow"><span class="dash">—</span> HINTERGRUND</span>
                     <h2 id="aboutTitle">Ich arbeite ruhig, klar und wertschätzend.</h2>
                     <div class="experience-tag" id="experienceTag">
                         <i data-lucide="award"></i>
@@ -366,7 +460,7 @@
         <section class="section testimonials-section" id="testimonials">
             <div class="container">
                 <div class="testimonials-intro reveal">
-                    <span class="eyebrow">Kundenstimmen</span>
+                    <span class="eyebrow-dash"><span class="dash">—</span> KUNDENSTIMMEN</span>
                     <h2>Stimmen aus der Praxis</h2>
                     <p class="lead">Erfahrungen von Tierärztinnen, Tierärzten und Führungskräften, die von meiner Supervision und meinem Coaching profitiert haben.</p>
                 </div>
@@ -445,13 +539,13 @@
         </section>
 
         <!-- CONTACT SECTION -->
-        <section class="section" id="contact">
+        <section class="section contact-section" id="contact">
             <div class="container grid-2 contact-grid">
                 <div class="contact-info reveal" id="contactInfoWrapper">
-                    <span class="eyebrow" id="contactEyebrow">Kontakt</span>
+                    <span class="eyebrow-dash" id="contactEyebrow"><span class="dash">—</span> KONTAKT</span>
                     <h2 id="contactTitle">Der erste Schritt ist ein Gespräch.</h2>
-                    <p class="lead" id="contactLeadText">Wenn Sie merken, dass ein Thema Sie, Ihr Team oder Ihre berufliche Situation beschäftigt, nehmen Sie gerne kontakt mit mir auf.</p>
-                    <p id="contactBodyText">Gemeinsam klären wir, welches Format passend ist: Einzelgespräch, Supervision, Mediation, Teamprozess, Seminar oder Vortrag.</p>
+                    <p class="lead" id="contactLeadText">Wenn Sie merken, dass ein Thema Sie, Ihr Team oder Ihre berufliche Situation beschäftigt, nehmen Sie gerne Kontakt mit mir auf.</p>
+                    <p id="contactBodyText">Meine HomeBase ist Staffhorst — mein räumlicher Schwerpunkt liegt auf Niedersachsen und den angrenzenden Bundesländern, bei Bedarf bin ich auch gerne überregional für Sie da. Wir arbeiten sowohl online als auch in geeigneten Räumlichkeiten in Ihrer Nähe oder direkt vor Ort in Ihrer Praxis.</p>
                     
                     <div class="contact-method-list" id="contactMethods">
                         <div class="contact-method-item" id="methodEmail">
@@ -465,16 +559,16 @@
                         <div class="contact-method-item" id="methodPhone">
                             <div class="contact-method-icon"><i data-lucide="phone"></i></div>
                             <div class="contact-method-content">
-                                <h4>Telefonische Anfrage</h4>
-                                <a href="tel:+495111234567" id="linkPhone">+49 (0) 511 / 1234567</a>
+                                <h4>Mobiltelefon</h4>
+                                <a href="tel:+491774128108" id="linkPhone">+49 177 4128108</a>
                             </div>
                         </div>
                         
                         <div class="contact-method-item" id="methodLocation">
                             <div class="contact-method-icon"><i data-lucide="map-pin"></i></div>
                             <div class="contact-method-content">
-                                <h4>Räumlichkeiten</h4>
-                                <span>Hannover / Online / Vor Ort in Ihrer Praxis</span>
+                                <h4>Standort & Einsatzbereich</h4>
+                                <span>Willenkämper Str. 35, 27254 Staffhorst · Niedersachsen & überregional · Online & vor Ort</span>
                             </div>
                         </div>
                     </div>
@@ -515,8 +609,8 @@
                                 </div>
                                 
                                 <div class="form-group" id="formGroupMessage">
-                                    <label for="message" class="form-label">Nachricht *</label>
-                                    <textarea id="message" class="form-control" placeholder="Beschreiben Sie kurz Ihr Anliegen..." required></textarea>
+                                    <label for="message" class="form-label">Nachricht <span style="font-size: 0.85em; opacity: 0.65; font-weight: normal;">(optional)</span></label>
+                                    <textarea id="message" class="form-control" placeholder="Beschreiben Sie kurz Ihr Anliegen (optional)..."></textarea>
                                 </div>
 
                                 <div class="form-nav-buttons">
@@ -632,35 +726,35 @@
                     </ul>
                 </div>
                 
-                <div class="footer-column" id="footerColContact">
-                    <h4>Kontakt</h4>
-                    <ul class="footer-contact-info">
-                        <li>
-                            <i data-lucide="user"></i>
-                            <span>PD Dr. med. vet. Amely Campe</span>
-                        </li>
-                        <li>
-                            <i data-lucide="award"></i>
-                            <span>Fachtierärztin für Epidemiologie</span>
-                        </li>
-                        <li>
-                            <i data-lucide="heart-handshake"></i>
-                            <span>Supervisorin & Mediatorin</span>
-                        </li>
-                        <li>
-                            <i data-lucide="map-pin"></i>
-                            <span>Hannover, Deutschland</span>
-                        </li>
-                        <li>
-                            <i data-lucide="phone"></i>
-                            <a href="tel:+495111234567">+49 (0) 511 / 1234567</a>
-                        </li>
-                    </ul>
+                <div class="footer-column footer-contact-col" id="footerColContact">
+                    <h4 class="footer-contact-heading">KONTAKT</h4>
+                    <div class="footer-contact-block">
+                        <p class="footer-contact-address">
+                            <span class="footer-contact-name">Dr. Amely Campe</span><br>
+                            Willenkämper Str. 35<br>
+                            27254 Staffhorst
+                        </p>
+                        <p class="footer-contact-phone">
+                            <a href="tel:+491774128108">+49 177 4128108</a>
+                        </p>
+                        <p class="footer-contact-email">
+                            <a href="mailto:info@amely-campe.de">info@amely-campe.de</a>
+                        </p>
+                        <div class="footer-social-row">
+                            <a href="https://www.instagram.com/amelycampe_supervision/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram" id="footerInstaLink">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <div class="footer-bottom" id="footerBottomWrapper">
-                <p class="copyright" id="copyrightText">&copy; 2026 Dr. med. vet. Amely Campe. Alle Rechte vorbehalten.</p>
+                <p class="copyright" id="copyrightText">&copy; 2026 Dr. med. vet. Amely Campe. Alle Rechte vorbehalten. | Website by <a href="https://scholz-friese-webdesign.de/" target="_blank" rel="noopener" class="agency-link">Scholz &amp; Friese Webdesign</a></p>
                 <div class="footer-bottom-links" id="footerLegalLinks">
                     <a href="impressum.html" class="footer-bottom-link" id="footerLinkImpressum">Impressum</a>
                     <a href="datenschutz.html" class="footer-bottom-link" id="footerLinkDatenschutz">Datenschutz</a>
