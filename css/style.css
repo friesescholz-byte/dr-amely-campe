@@ -974,22 +974,35 @@ a {
 .seminar-cards-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 36px;
-    align-items: start;
+    gap: 32px;
+    align-items: stretch;
+}
+
+/* Center the last card when it is alone in the last row */
+@media (min-width: 1025px) {
+    .seminar-large-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        width: 100%;
+        max-width: calc(50% - 16px);
+        justify-self: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .seminar-large-card {
     background-color: #FFFFFF;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xs);
-    padding: 38px 34px;
+    padding: 32px 28px;
     transition: var(--transition-smooth);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 0 4px 20px rgba(35, 39, 37, 0.03);
     position: relative;
-    min-height: 670px; /* Equal height for all cards in standard view */
+    min-height: 560px;
+    height: 100%;
 }
 
 .seminar-large-card:hover {
@@ -998,13 +1011,9 @@ a {
     border-color: var(--color-border-accent);
 }
 
-.seminar-large-card:not(.is-expanded) {
-    height: 670px; /* Exactly identical height for all unexpanded cards across grid rows */
-}
-
 .seminar-large-card.is-expanded {
-    min-height: 670px;
     height: auto;
+    min-height: 560px;
 }
 
 .seminar-card-content {
@@ -1014,8 +1023,8 @@ a {
 }
 
 .seminar-card-header {
-    margin-bottom: 14px;
-    min-height: 110px;
+    margin-bottom: 8px;
+    min-height: 82px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -1024,26 +1033,29 @@ a {
 .seminar-card-badge {
     display: inline-block;
     align-self: flex-start;
-    padding: 6px 14px;
+    padding: 5px 12px;
     background-color: var(--color-bg-schlamm);
     color: var(--color-anthrazit);
     border-radius: var(--radius-xs);
     font-family: var(--font-main);
-    font-size: 0.74rem;
+    font-size: 0.72rem;
     font-weight: 700;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.09em;
     text-transform: uppercase;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     border: 1px solid var(--color-border-subtle);
 }
 
 .seminar-large-card h3 {
     font-family: var(--font-serif);
-    font-size: clamp(1.4rem, 1.9vw, 1.75rem);
+    font-size: clamp(1.35rem, 1.8vw, 1.65rem);
     font-weight: 600;
     color: var(--color-anthrazit);
     line-height: 1.25;
     margin: 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
 }
 
 /* Quotes Container - Crisp, High-Contrast & Highly Readable */
@@ -1051,10 +1063,10 @@ a {
     background-color: #F8F9F8;
     border: 1px solid rgba(25, 32, 29, 0.09);
     border-left: 4px solid var(--color-accent-teal);
-    padding: 16px 20px;
+    padding: 12px 18px;
     border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
-    margin: 14px 0 18px;
-    min-height: 195px;
+    margin: 10px 0 14px;
+    min-height: 145px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1066,15 +1078,15 @@ a {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 5px;
 }
 
 .seminar-quotes-list li {
     font-family: var(--font-main);
-    font-size: 0.94rem;
+    font-size: 0.90rem;
     font-weight: 500;
-    line-height: 1.55;
-    color: #111827; /* Rich dark obsidian for crystal-clear readability */
+    line-height: 1.48;
+    color: #111827;
     letter-spacing: -0.01em;
 }
 
@@ -1086,40 +1098,44 @@ a {
     justify-content: flex-start;
 }
 
-.seminar-large-card.is-expanded .seminar-card-teaser-wrapper {
-    flex: none;
-}
-
 .seminar-card-desc {
     font-family: var(--font-main);
-    color: #232725;
-    font-size: 0.95rem;
-    line-height: 1.65;
+    color: #2b312e;
+    font-size: 0.92rem;
+    line-height: 1.62;
     margin: 0;
 }
 
-/* Expandable Details - Original Flowing Paragraphs */
-.seminar-card-details {
-    max-height: 0;
-    overflow: hidden;
+/* Expandable Details Container - Modern CSS Grid Accordion */
+.seminar-card-details-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
     opacity: 0;
-    transition: max-height 0.4s ease, opacity 0.35s ease, margin-top 0.3s ease;
 }
 
-.seminar-large-card.is-expanded .seminar-card-details {
-    max-height: 1400px;
+.seminar-large-card.is-expanded .seminar-card-details-wrapper {
+    grid-template-rows: 1fr;
     opacity: 1;
-    margin-top: 18px;
-    padding-top: 20px;
+}
+
+.seminar-card-details-inner {
+    overflow: hidden;
+    min-height: 0;
+}
+
+.seminar-details-content {
+    padding-top: 16px;
+    margin-top: 14px;
     border-top: 1px dashed var(--color-border);
 }
 
 .seminar-orig-paragraph {
     font-family: var(--font-main);
-    font-size: 0.93rem;
-    line-height: 1.68;
+    font-size: 0.91rem;
+    line-height: 1.65;
     color: var(--color-text-muted);
-    margin-bottom: 14px;
+    margin-bottom: 12px;
 }
 
 .seminar-orig-paragraph:last-child {
@@ -1133,7 +1149,7 @@ a {
     background-color: rgba(35, 39, 37, 0.04);
     border-left: 2px solid var(--color-anthrazit);
     padding: 10px 14px;
-    margin-top: 14px;
+    margin-top: 12px;
     font-family: var(--font-main);
     font-size: 0.85rem;
     font-style: italic;
@@ -1154,8 +1170,8 @@ a {
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    padding-top: 20px;
-    margin-top: auto; /* Pushes footer to the exact same baseline across all cards */
+    padding-top: 18px;
+    margin-top: auto;
     border-top: 1px solid var(--color-border-subtle);
 }
 
@@ -1183,7 +1199,7 @@ a {
 .btn-toggle-seminar .toggle-icon {
     width: 14px;
     height: 14px;
-    transition: transform 0.3s ease;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .seminar-large-card.is-expanded .btn-toggle-seminar .toggle-icon {
@@ -2602,6 +2618,12 @@ textarea.admin-form-control {
         height: auto !important;
     }
 
+    .seminar-large-card:last-child:nth-child(odd) {
+        grid-column: auto;
+        max-width: 100%;
+        margin: 0;
+    }
+
     .seminar-card-header {
         min-height: auto;
     }
@@ -2963,6 +2985,12 @@ textarea.admin-form-control {
     .seminar-large-card:not(.is-expanded) {
         min-height: auto !important;
         height: auto !important;
+    }
+
+    .seminar-large-card:last-child:nth-child(odd) {
+        grid-column: auto;
+        max-width: 100%;
+        margin: 0;
     }
 
     .seminar-card-header {

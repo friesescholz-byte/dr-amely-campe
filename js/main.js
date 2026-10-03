@@ -481,9 +481,13 @@ function renderSeminars() {
                     <p class="seminar-card-desc">${escapeHtml(sem.teaser || sem.description || '')}</p>
                 </div>
                 ${hasDetails ? `
-                    <div class="seminar-card-details" id="details-${sem.id}">
-                        ${paragraphsHtml}
-                        ${noteHtml}
+                    <div class="seminar-card-details-wrapper" id="details-${sem.id}">
+                        <div class="seminar-card-details-inner">
+                            <div class="seminar-details-content">
+                                ${paragraphsHtml}
+                                ${noteHtml}
+                            </div>
+                        </div>
                     </div>
                 ` : ''}
             </div>
