@@ -975,7 +975,7 @@ a {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
-    align-items: stretch;
+    align-items: start; /* Expanding one card never stretches the adjacent card */
 }
 
 /* Center the last card when it is alone in the last row */
@@ -1001,8 +1001,7 @@ a {
     justify-content: space-between;
     box-shadow: 0 4px 20px rgba(35, 39, 37, 0.03);
     position: relative;
-    min-height: 560px;
-    height: 100%;
+    min-height: 590px; /* Identical uniform height for all cards in standard unexpanded view */
 }
 
 .seminar-large-card:hover {
@@ -1013,7 +1012,7 @@ a {
 
 .seminar-large-card.is-expanded {
     height: auto;
-    min-height: 560px;
+    min-height: 590px;
 }
 
 .seminar-card-content {
