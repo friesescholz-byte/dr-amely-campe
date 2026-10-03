@@ -2,57 +2,165 @@
    Dr. Amely Campe - Premium JS Script (Scholz & Friese UX Pro Max)
    ========================================================================== */
 
-// Default seminars list to seed localStorage (even number: 6 items for grid balance)
+// Default seminars list from amely-campe.de (9 authentic topics, exact original texts)
 const DEFAULT_SEMINARS = [
     {
         id: "sem-1",
-        title: "Kommunikation mit Tierhalter:innen",
-        audience: "Tierärzt:innen & Praxisteams",
-        duration: "Tagesseminar",
-        description: "Souveräner und empathischer Umgang mit hohen Erwartungen, schwierigen Nachrichten und Konflikten im Sprechzimmer."
+        title: "Kommunikation mit Tierbesitzern",
+        audience: "Tierarztpraxen & Vet. Behörden",
+        quotes: [
+            "„'Herr Meyer' ignoriert Ihre Ratschläge seit Jahren, obwohl seine Tiere offenbar leiden.“",
+            "„'Frau Müller' ist nicht mal pünktlich, droht aber mit einer schlechten Bewertung im Internet.“",
+            "„'Frau Schulze' hat vor Ihnen schon Dr. Google und andere ratgebende Quellen konsultiert.“"
+        ],
+        teaser: "Warum eskalieren Gespräche? Wie kommen Missverständnisse zustande? Warum versteht man mich nicht? Was kann ich in Zukunft tun oder bedenken, wenn es scheinbar wieder schiefgeht?",
+        paragraphs: [
+            "Der Workshop richtet sich an alle Personen, die in Tierarztpraxen oder Vet. Behörden beschäftigt sind. Die theoretischen Inhalte werden anhand von echten Beispielen der Teilnehmenden erklärt und damit gleich praktisch nutzbar gemacht.",
+            "Der Workshop hat das Ziel, das Miteinander auf der Beziehungsebene in den Blick zu nehmen und anhand von neuen Erkenntnissen Verständnis füreinander zu schaffen, das Miteinander zu erleichtern und die berufliche Zufriedenheit zu erhöhen."
+        ],
+        note: ""
     },
     {
         id: "sem-2",
-        title: "Kommunikation im Team",
-        audience: "Praxisteams & Kliniken",
-        duration: "Workshop (Halbtag/Ganztag)",
-        description: "Missverständnisse abbauen, die Zusammenarbeit nachhaltig stärken und eine konstruktive, wertschätzende Feedbackkultur etablieren."
+        title: "Kommunikation mit Mitarbeitenden",
+        audience: "Teamleiter:innen, Chef:innen & Leitungen",
+        quotes: [
+            "„Keiner macht hier mal was von selbst.“",
+            "„Manchmal glaube ich, die sind alle dumm; wie soll ich es denn noch erklären, damit sie es verstehen?“",
+            "„Dieser Zickenkrieg hier im Team nervt mich total.“",
+            "„Wenn das hier nicht bald besser wird, dann ziehe ich aber andere Seiten auf.“"
+        ],
+        teaser: "Was man sagt, was man meint und was der/die Andere versteht, kann sich stark unterscheiden. Warum engagieren die Mitarbeitenden sich nicht wie gewünscht? Welchen Anteil habe ich als ChefIn an Konflikten im Team? Wie kann ich auf Drohungen und Druck verzichten? Welche Arten von Gesprächen mit den Mitarbeitenden gibt es (von kurzen Absprachen zwischen Tür und Angel über Teamgespräche bis zum alljährlichen Entwicklungsgespräch)?",
+        paragraphs: [
+            "Der Workshop richtet sich an TeamleiterInnen, ChefInnen und LeiterInnen von Tierarztpraxen oder Vet. Behörden. Die theoretischen Inhalte werden anhand von echten Beispielen der Teilnehmenden erklärt und damit gleich praktisch nutzbar gemacht.",
+            "Der Workshop hat das Ziel, das Miteinander auf der Beziehungsebene in den Blick zu nehmen und anhand von neuen Erkenntnissen Verständnis füreinander zu schaffen, das Miteinander zu erleichtern und die berufliche Zufriedenheit zu erhöhen."
+        ],
+        note: ""
     },
     {
         id: "sem-3",
-        title: "Führung und Mitarbeitendengespräche",
-        audience: "Führungskräfte & Praxisinhaber",
-        duration: "2-Tages-Intensivkurs",
-        description: "Mitarbeitende zeitgemäß motivieren, gesunde Grenzen setzen und schwierige Entwicklungsgespräche zielgerichtet führen."
+        title: "Kommunikation im Team und mit den Chefs",
+        audience: "Angestellte in Praxis & Amt",
+        quotes: [
+            "„Die KollegIn versucht mir meine Arbeit mit Absicht schwer zu machen.“",
+            "„Wenn die Vorgesetzten alles besser organisieren würden, müssten wir nicht ständig über dem Limit arbeiten.“",
+            "„Es hat keinen Sinn die Vorgesetzten oder KollegInnen auf mein Problem anzusprechen; die drehen sowieso den Spieß um und beschuldigen mich oder machen mich klein.“"
+        ],
+        teaser: "Warum werde ich nicht gehört und gesehen mit meinen Bedürfnissen? Was geht eigentlich im Kopf der Anderen herum? Wie komme ich raus aus der Spirale der Schuldsuche und Beurteilungen und Stummheit?",
+        paragraphs: [
+            "Der Workshop richtet sich an Angestellte eines Teams in Tierarztpraxen oder Vet. Behörden. Die theoretischen Inhalte werden anhand von echten Beispielen der Teilnehmenden erklärt und damit gleich praktisch nutzbar gemacht.",
+            "Der Workshop hat das Ziel, das Miteinander auf der Beziehungsebene in den Blick zu nehmen und anhand von neuen Erkenntnissen Verständnis füreinander zu schaffen, das Miteinander zu erleichtern und die berufliche Zufriedenheit zu erhöhen."
+        ],
+        note: ""
     },
     {
         id: "sem-4",
-        title: "Mental Health in der Tiermedizin",
-        audience: "Alle Berufsgruppen",
-        duration: "Halbtagesseminar / Vortrag",
-        description: "Umgang mit Stress, emotionaler Belastung und Überlastungssignalen. Praktische Strategien für gesunde Abgrenzung im Berufsalltag."
+        title: "Wie sage ich es meinem Kinde – Analyse einer Befragungssituation im Tierseuchenfall in Theorie und Praxis",
+        audience: "Amtstierärzt:innen & Öffentlicher Dienst",
+        quotes: [
+            "„Der öffentliche, politische und zeitliche Druck ist meist so hoch, dass viele ErmittlerInnen Fehler unbedingt vermeiden und nichts übersehen wollen.“",
+            "„Nach dem Motto: ‚Verständnis verbessert Verständigung.‘“"
+        ],
+        teaser: "Viele Tierärzte im öffentliche Dienst haben heute wenig oder keine Erfahrungen damit, epidemiologische Ermittlungen im Ausbruchsfall durchzuführen. Der öffentliche, politische und zeitliche Druck ist meist so hoch, dass viele ErmittlerInnen Fehler unbedingt vermeiden und nichts übersehen wollen.",
+        paragraphs: [
+            "Im Workshop wird anhand eines imaginären Beispiels eine Befragungssituation nachgespielt, um sich in die beteiligten KommunikationspartnerInnen einzufühlen. Daran anschließend können die TeilnehmerInnen sich mit dem Kommunikationsmodell von Marshall Rosenberg, der sog. Gewaltfreien Kommunikation (GFK) bekannt machen und darüber gemeinsam reflektieren, welche Gefühle, Bedürfnisse und Wünsche/Bitten die Gesprächsbeteiligten hatten.",
+            "Dies soll das Verständnis für die eigene Rolle im Ausbruchsfall ebenso erhellen wie klarer machen, wie es den anderen Beteiligten ergeht. Nach dem Motto „Verständnis verbessert Verständigung.“"
+        ],
+        note: ""
     },
     {
         id: "sem-5",
-        title: "Konflikte in Praxis, Behörde oder Organisation",
-        audience: "Teams & Abteilungsleiter",
-        duration: "Tagesseminar",
-        description: "Spannungen frühzeitig erkennen, lösungsorientiert ansprechen und strukturelle Konfliktursachen nachhaltig beheben."
+        title: "Mußestunde für Führungskräfte",
+        audience: "Chef:innen & Praxisleitungen",
+        quotes: [
+            "„Ich bin mal angetreten, um für Tiere etwas Gutes zu tun. Jetzt geht es nur noch um Orga, Leistung, Arbeit und Geld.“",
+            "„Was ist aus meinen Idealen geworden?“",
+            "„Wie geht es mir eigentlich wirklich mit meinem Berufsleben?“"
+        ],
+        teaser: "Reflexion über Ideale, Realität & Zwänge, persönliche Entwicklung und wie man seine Rolle als ChefIn annimmt und ausfüllt. Wir schauen mit etwas Ruhe und Abstand auf Ihre derzeitige Tätigkeit, schauen zurück den Weg entlang, den Sie bereits gegangen sind und reflektieren darüber, in welcher Richtung es ab hier weitergehen soll.",
+        paragraphs: [
+            "Der Workshop richtet sich an ChefInnen von Tierarztpraxen und LeiterInnen von Vet. Behörden. Der Workshop hat das Ziel, kurz innezuhalten und in der wertschätzenden und mitfühlenden Atmosphäre von KollegInnen zu prüfen, wohin Ihr innerer Kompass zeigt und wie Sie den Weg dorthin finden können – trotz aller Widrigkeiten und Hindernisse.",
+            "Anhand von neuen Erkenntnissen und guten Ideen für die Zukunft soll sich die berufliche Zufriedenheit erhöhen."
+        ],
+        note: ""
     },
     {
         id: "sem-6",
-        title: "Praxisübergabe und berufliche Veränderung",
-        audience: "Inhaber:innen & Nachfolger:innen",
-        duration: "Individueller Workshop",
-        description: "Den emotionalen, rollenbezogenen und strukturellen Wandel bei Inhaberwechseln und Neuanfängen erfolgreich begleiten."
+        title: "„Wir sind austherapiert!“ – Praxismanagement mal anders beleuchtet",
+        audience: "Alle Personen in Tierarztpraxen",
+        quotes: [
+            "„Praxismanagement und Zeitmanagement mögen für Andere hilfreich sein, bei uns bringt das alles trotzdem nichts.“",
+            "„Burn-Out, lange Krankschreibungen und häufige Kündigungen sind bei uns an der Tagesordnung.“",
+            "„Konflikte im Team, fehlende Absprachen untereinander und verstörende Erlebnisse mit PatientenbesitzerInnen belasten das ganze Team und zehren uns aus.“"
+        ],
+        teaser: "Warum greifen die ganzen Coachings und Managementtools, die wir ausprobiert haben, bei uns nicht? Wie kommen wir aus dem Krisenmodus? Wie kommen wir zurück zu gegenseitiger Wertschätzung, Wohlwollen und Rückendeckung?",
+        paragraphs: [
+            "Der Workshop richtet sich an alle Personen, die in Tierarztpraxen beschäftigt sind. Die theoretischen Inhalte werden anhand von echten Beispielen der Teilnehmenden erklärt und damit gleich praktisch nutzbar gemacht.",
+            "Der Workshop hat das Ziel, mal hinter den Vorhang zu schauen. In einem Praxissystem, geht es nicht nur um rationale Ablaufpläne, SOP’s und Co. Es geht auch um Menschen mit Gefühlen und Bedürfnissen und es geht um Beziehungen. Die Teilnehmenden haben die Möglichkeit, das Miteinander auf der Beziehungsebene in den Blick zu nehmen. Anhand von neuen Erkenntnissen können sie verstehen, was die Managementtools bisher hat scheitern lassen und herausfinden was nötig ist, damit sich neben einer besseren Praxisorganisation auch die berufliche Zufriedenheit verbessert."
+        ],
+        note: ""
+    },
+    {
+        id: "sem-7",
+        title: "Schnupperstunde „Supervision“",
+        audience: "Tierarztpraxen & Vet. Behörden",
+        quotes: [
+            "„In meinem Team ist ein Konflikt.“",
+            "„Die Patientenbesitzerin hört nicht auf meinen Rat.“",
+            "„Meine Chefin interessiert sich nicht für meine Gefühle und Bedürfnisse.“",
+            "„Nichts ist hier geregelt.“",
+            "„Die Arbeit wächst mir über den Kopf.“"
+        ],
+        teaser: "Diese und ähnliche Themen des beruflichen Miteinanders von Menschen sind Themen und Inhalte einer Supervision. Man schaut in Begleitung einer professionellen Kraft „aus der Vogelperspektive“ auf den Fall / das Thema, mit dem es einem so schlecht geht. Was ist da eigentlich wirklich zwischen uns passiert? Wie mag es dem anderen damit gehen? Was fühle ich? Und was brauche ich? Wie bekomme ich das Heft des Handelns (wieder) in meine Hand? Was kann ich tun, um meine Bedürfnisse zu befriedigen?",
+        paragraphs: [
+            "Der Workshop ist als Supervisionseinheit aufgebaut, damit die Teilnehmenden das gemeinsame Arbeiten kennenlernen und eventuelle Berührungsängste abbauen können. Er richtet sich an alle Personen, die in Tierarztpraxen oder Vet. Behörden beschäftigt sind. Die theoretischen Inhalte werden anhand von echten Beispielen der Teilnehmenden erklärt und damit gleich praktisch nutzbar gemacht.",
+            "Der Workshop hat das Ziel, das Miteinander auf der Beziehungsebene in den Blick zu nehmen und anhand von neuen Erkenntnissen Verständnis füreinander zu schaffen, das Miteinander zu erleichtern und die berufliche Zufriedenheit zu erhöhen."
+        ],
+        note: "Hinweis: Dieses Thema steht nicht als Vortrag im Angebot."
+    },
+    {
+        id: "sem-8",
+        title: "Mental Health – Was kann ich dafür tun (für mich selbst und für mein Team)?",
+        audience: "Alle Beschäftigten in Tierarztpraxen",
+        quotes: [
+            "„Burn-Out, lange Krankschreibungen und häufige Kündigungen sind bei uns an der Tagesordnung.“",
+            "„Ich kann arbeiten, soviel es geht; aber meinen ChefInnen ist es nie (gut) genug.“",
+            "„Angst, Ärger, Wut und Schuldzuweisungen sind bei uns an der Tagesordnung.“",
+            "„Meine Ängste bestimmen mein Leben.“",
+            "„Der Tod einer Kollegin hat unser ganzes Team traumatisiert.“"
+        ],
+        teaser: "Mental Health – die psychische Gesundheit, der Geisteszustand… Gibt es eine Grenze zwischen gesund und krank? Was gefährdet unsere psychische Gesundheit häufig in der Tierarztpraxis? Was kann ich tun, um für mich zu sorgen?",
+        paragraphs: [
+            "Der Vortrag richtet sich an alle Personen, die in Tierarztpraxen beschäftigt sind. Die theoretischen Inhalte werden anhand von skizzierten Beispielen erklärt. Ziel ist es, einen Überblick zu geben, welche häufig auftretenden Probleme in Tierarztpraxen die psychische Gesundheit der Menschen gefährden und welche eigenen Möglichkeiten man hat, um für sich zu sorgen.",
+            "Zudem wird aufgezeigt, welche professionellen Angebote es gibt, um für sich allein oder im Team an Problemlösungen zu arbeiten und berufliche Zufriedenheit (wieder-)herzustellen."
+        ],
+        note: "Hinweis: Dieses Thema steht nur als Vortrag im Angebot."
+    },
+    {
+        id: "sem-9",
+        title: "Praxisübergabe – Sanfter Übergang oder verbitterter Bruch?",
+        audience: "Chef:innen von Praxen im Umbruch",
+        quotes: [
+            "„Die machen einfach alles anders, dabei hatte ich doch alles so gut in Gang.“",
+            "„Ich gehöre doch noch nicht zum alten Eisen, warum hören die mir nicht mehr zu?“",
+            "„Ich will nicht rausgeekelt werden, ich will selber meinen Abschied machen.“",
+            "„Hätte ich mich bloß nicht darauf eingelassen; den werde ich nie los.“"
+        ],
+        teaser: "Die Übergabe einer Praxis ist eine heikle Zeit, nicht nur für den/die SeniorpartnerIn, auch für das Team und die neue Leitung. Das finanzielle und rechtliche ist geklärt, aber haben auch alle Beteiligten verarbeitet, was dieser Umschwung bedeutet? Ist klar, wie es weitergeht? Gibt es alternative Szenarien, wenn der gewählte Weg nicht gut läuft?",
+        paragraphs: [
+            "Der Workshop richtet sich an ChefInnen von Tierarztpraxen, die sich im Umbruch befinden. Er hat das Ziel, kurz innezuhalten und in der wertschätzenden und mitfühlenden Atmosphäre von KollegInnen in der gleichen Lebenssituation zu prüfen, ob auch im Herzen alles geklärt ist. Wir klopfen ab, ob das Team wirklich mitgenommen wurde und ob die Ausscheidenden und die Nachfolgenden auch auf der Beziehungsebene alles geklärt haben.",
+            "Die theoretischen Inhalte sollen anhand von echten Beispielen der Teilnehmenden erklärt und damit gleich praktisch nutzbar gemacht werden. Der Workshop hat das Ziel, das Miteinander auf der Beziehungsebene in den Blick zu nehmen und anhand von neuen Erkenntnissen Verständnis füreinander zu schaffen und die Praxisübergabe zu aller Zufriedenheit zu gestalten."
+        ],
+        note: ""
     }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. DATA SEEDING (Only seed if empty or not present)
-    const currentSems = JSON.parse(localStorage.getItem('sf_seminars'));
-    if (!currentSems || currentSems.length === 0) {
+    // 1. DATA SEEDING (Seed/Update to authentic seminars)
+    const currentVersion = localStorage.getItem('sf_seminars_version');
+    if (currentVersion !== 'v5') {
         localStorage.setItem('sf_seminars', JSON.stringify(DEFAULT_SEMINARS));
+        localStorage.setItem('sf_seminars_version', 'v5');
     }
 
     // 2. RENDER SEMINARS ON HOMEPAGE
@@ -90,6 +198,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 menuToggle.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = '';
             });
+        });
+
+        // Close when clicking mobile CTA button
+        const mobileCta = document.getElementById('mobileMenuCta');
+        if (mobileCta) {
+            mobileCta.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        }
+
+        // Close when tapping outside the mobile drawer
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
         });
     }
 
@@ -256,9 +385,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const link = e.target.closest('.service-contact-link');
         if (link) {
             const serviceVal = link.getAttribute('data-service');
+            const seminarTitle = link.getAttribute('data-seminar-title');
             const formatSelect = document.getElementById('format');
             if (formatSelect && serviceVal) {
                 formatSelect.value = serviceVal;
+            }
+            if (seminarTitle) {
+                const messageField = document.getElementById('message');
+                if (messageField) {
+                    messageField.value = `Guten Tag Frau Dr. Campe,\n\nich interessiere mich für das Thema:\n„${seminarTitle}“\n\nBitte senden Sie mir hierzu nähere Informationen zu.\n\nMit freundlichen Grüßen`;
+                }
             }
             // If they clicked a link, reset the contact form to Step 1
             const panels = document.querySelectorAll('.form-step-panel');
@@ -298,22 +434,88 @@ function renderSeminars() {
         card.className = 'seminar-large-card reveal';
         card.id = `card-${sem.id}`;
         
-        card.innerHTML = `
-            <div class="seminar-card-header">
-                <span class="seminar-card-badge">${escapeHtml(sem.audience)}</span>
-                <h3>${escapeHtml(sem.title)}</h3>
+        // Quotes box
+        let quotesHtml = '';
+        if (sem.quotes && Array.isArray(sem.quotes) && sem.quotes.length > 0) {
+            quotesHtml = `
+                <div class="seminar-quotes-box">
+                    <ul class="seminar-quotes-list">
+                        ${sem.quotes.map(q => `<li>${escapeHtml(q)}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+        } else if (sem.quote) {
+            quotesHtml = `
+                <div class="seminar-quotes-box">
+                    <ul class="seminar-quotes-list">
+                        <li>${escapeHtml(sem.quote)}</li>
+                    </ul>
+                </div>
+            `;
+        }
+
+        // Original flowing paragraphs (verbatim without artificial labels)
+        let paragraphsHtml = '';
+        const paras = sem.paragraphs || [sem.targetGroup, sem.method, sem.goal].filter(Boolean);
+        if (paras.length > 0) {
+            paragraphsHtml = paras.map(p => `<p class="seminar-orig-paragraph">${escapeHtml(p)}</p>`).join('');
+        }
+
+        const noteHtml = sem.note ? `
+            <div class="seminar-card-note">
+                <i data-lucide="info"></i>
+                <span>${escapeHtml(sem.note)}</span>
             </div>
-            <p class="seminar-card-desc">${escapeHtml(sem.description)}</p>
+        ` : '';
+
+        const hasDetails = Boolean(paragraphsHtml || noteHtml);
+
+        card.innerHTML = `
+            <div class="seminar-card-content">
+                <div class="seminar-card-header">
+                    <span class="seminar-card-badge">${escapeHtml(sem.audience || 'Tiermedizin')}</span>
+                    <h3>${escapeHtml(sem.title)}</h3>
+                </div>
+                ${quotesHtml}
+                <div class="seminar-card-teaser-wrapper">
+                    <p class="seminar-card-desc">${escapeHtml(sem.teaser || sem.description || '')}</p>
+                </div>
+                ${hasDetails ? `
+                    <div class="seminar-card-details" id="details-${sem.id}">
+                        ${paragraphsHtml}
+                        ${noteHtml}
+                    </div>
+                ` : ''}
+            </div>
             <div class="seminar-card-footer">
-                <span class="seminar-meta">
-                    <i data-lucide="clock"></i>
-                    <span>${escapeHtml(sem.duration)}</span>
-                </span>
-                <a href="#contact" class="btn-text service-contact-link" data-service="seminar">Anfragen <i data-lucide="arrow-right"></i></a>
+                ${hasDetails ? `
+                    <button type="button" class="btn-toggle-seminar" data-card-id="card-${sem.id}" aria-expanded="false">
+                        <span class="toggle-text">Mehr erfahren</span>
+                        <i data-lucide="chevron-down" class="toggle-icon"></i>
+                    </button>
+                ` : '<span></span>'}
+                <a href="#contact" class="btn-text service-contact-link" data-service="seminar" data-seminar-title="${escapeHtml(sem.title)}">Thema anfragen <i data-lucide="arrow-right"></i></a>
             </div>
         `;
         
         grid.appendChild(card);
+    });
+
+    // Expand/Collapse event listeners
+    grid.querySelectorAll('.btn-toggle-seminar').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const cardId = btn.getAttribute('data-card-id');
+            const card = document.getElementById(cardId);
+            if (!card) return;
+
+            const isExpanded = card.classList.toggle('is-expanded');
+            btn.setAttribute('aria-expanded', isExpanded);
+            const textSpan = btn.querySelector('.toggle-text');
+            if (textSpan) {
+                textSpan.textContent = isExpanded ? 'Weniger anzeigen' : 'Mehr erfahren';
+            }
+        });
     });
 
     // Reinitialize lucide icons for dynamic elements

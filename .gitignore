@@ -1,0 +1,5 @@
+# Temporary files
+docx_extracted/
+.DS_Store
+Thumbs.db
+*.tmp
