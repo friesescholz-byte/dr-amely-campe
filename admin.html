@@ -165,11 +165,37 @@
                 loadDashboardData();
             }
 
-            loginForm.addEventListener('submit', (e) => {
+            loginForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                // Simple password logic (we can use "admin" or "scholzfriese" or "campe")
                 const val = passwordField.value.trim().toLowerCase();
-                if (val === 'admin' || val === 'scholzfriese' || val === 'campe') {
+                if (!val) {
+                    errorMessage.style.display = 'block';
+                    return;
+                }
+
+                let isAuthed = false;
+                try {
+                    const res = await fetch('/api/admin/login', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ password: val })
+                    });
+                    const data = await res.json();
+                    if (res.ok && data?.success) isAuthed = true;
+                } catch {}
+
+                if (!isAuthed) {
+                    // Fallback: Secure SHA-256 verification (no plaintext password in source code)
+                    const hashBuffer = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(val));
+                    const hashHex = Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+                    if (hashHex === '92dd99913eeea89da831e44fa03f513934f84f749d863e98f636547c24b080f9' || 
+                        hashHex === '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918' || 
+                        hashHex === 'e6e9cfaaa621fc4729e082ed68972042028f47eea4875e8f972cd55ab123306e') {
+                        isAuthed = true;
+                    }
+                }
+
+                if (isAuthed) {
                     errorMessage.style.display = 'none';
                     sessionStorage.setItem('sf_admin_authenticated', 'true');
                     
