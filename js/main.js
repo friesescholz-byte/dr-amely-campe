@@ -30,9 +30,9 @@ const DEFAULT_SEMINARS = [
             "„Dieser Zickenkrieg hier im Team nervt mich total.“",
             "„Wenn das hier nicht bald besser wird, dann ziehe ich aber andere Seiten auf.“"
         ],
-        teaser: "Was man sagt, was man meint und was der/die Andere versteht, kann sich stark unterscheiden. Warum engagieren die Mitarbeitenden sich nicht wie gewünscht? Welchen Anteil habe ich als ChefIn an Konflikten im Team? Wie kann ich auf Drohungen und Druck verzichten? Welche Arten von Gesprächen mit den Mitarbeitenden gibt es (von kurzen Absprachen zwischen Tür und Angel über Teamgespräche bis zum alljährlichen Entwicklungsgespräch)?",
+        teaser: "Was man sagt, was man meint und was der/die Andere versteht, kann sich stark unterscheiden. Warum engagieren die Mitarbeitenden sich nicht wie gewünscht? Welchen Anteil habe ich als Chef:in an Konflikten im Team? Wie kann ich auf Drohungen und Druck verzichten? Welche Arten von Gesprächen mit den Mitarbeitenden gibt es (von kurzen Absprachen zwischen Tür und Angel über Teamgespräche bis zum alljährlichen Entwicklungsgespräch)?",
         paragraphs: [
-            "Der Workshop richtet sich an TeamleiterInnen, ChefInnen und LeiterInnen von Tierarztpraxen oder Vet. Behörden. Die theoretischen Inhalte werden anhand von echten Beispielen der Teilnehmenden erklärt und damit gleich praktisch nutzbar gemacht.",
+            "Der Workshop richtet sich an Teamleiter:innen, Chef:innen und Leiter:innen von Tierarztpraxen oder Vet. Behörden. Die theoretischen Inhalte werden anhand von echten Beispielen der Teilnehmenden erklärt und damit gleich praktisch nutzbar gemacht.",
             "Der Workshop hat das Ziel, das Miteinander auf der Beziehungsebene in den Blick zu nehmen und anhand von neuen Erkenntnissen Verständnis füreinander zu schaffen, das Miteinander zu erleichtern und die berufliche Zufriedenheit zu erhöhen."
         ],
         note: ""
@@ -58,12 +58,12 @@ const DEFAULT_SEMINARS = [
         title: "Wie sage ich es meinem Kinde – Analyse einer Befragungssituation im Tierseuchenfall in Theorie und Praxis",
         audience: "Amtstierärzt:innen & Öffentlicher Dienst",
         quotes: [
-            "„Der öffentliche, politische und zeitliche Druck ist meist so hoch, dass viele ErmittlerInnen Fehler unbedingt vermeiden und nichts übersehen wollen.“",
+            "„Der öffentliche, politische und zeitliche Druck ist meist so hoch, dass viele Ermittler:innen Fehler unbedingt vermeiden und nichts übersehen wollen.“",
             "„Nach dem Motto: ‚Verständnis verbessert Verständigung.‘“"
         ],
-        teaser: "Viele Tierärzte im öffentliche Dienst haben heute wenig oder keine Erfahrungen damit, epidemiologische Ermittlungen im Ausbruchsfall durchzuführen. Der öffentliche, politische und zeitliche Druck ist meist so hoch, dass viele ErmittlerInnen Fehler unbedingt vermeiden und nichts übersehen wollen.",
+        teaser: "Viele Tierärzt:innen im öffentlichen Dienst haben heute wenig oder keine Erfahrungen damit, epidemiologische Ermittlungen im Ausbruchsfall durchzuführen. Der öffentliche, politische und zeitliche Druck ist meist so hoch, dass viele Ermittler:innen Fehler unbedingt vermeiden und nichts übersehen wollen.",
         paragraphs: [
-            "Im Workshop wird anhand eines imaginären Beispiels eine Befragungssituation nachgespielt, um sich in die beteiligten KommunikationspartnerInnen einzufühlen. Daran anschließend können die TeilnehmerInnen sich mit dem Kommunikationsmodell von Marshall Rosenberg, der sog. Gewaltfreien Kommunikation (GFK) bekannt machen und darüber gemeinsam reflektieren, welche Gefühle, Bedürfnisse und Wünsche/Bitten die Gesprächsbeteiligten hatten.",
+            "Im Workshop wird anhand eines imaginären Beispiels eine Befragungssituation nachgespielt, um sich in die beteiligten Kommunikationspartner:innen einzufühlen. Daran anschließend können die Teilnehmer:innen sich mit dem Kommunikationsmodell von Marshall Rosenberg, der sog. Gewaltfreien Kommunikation (GFK) bekannt machen und darüber gemeinsam reflektieren, welche Gefühle, Bedürfnisse und Wünsche/Bitten die Gesprächsbeteiligten hatten.",
             "Dies soll das Verständnis für die eigene Rolle im Ausbruchsfall ebenso erhellen wie klarer machen, wie es den anderen Beteiligten ergeht. Nach dem Motto „Verständnis verbessert Verständigung.“"
         ],
         note: ""
@@ -77,10 +77,10 @@ const DEFAULT_SEMINARS = [
             "„Was ist aus meinen Idealen geworden?“",
             "„Wie geht es mir eigentlich wirklich mit meinem Berufsleben?“"
         ],
-        teaser: "Reflexion über Ideale, Realität & Zwänge, persönliche Entwicklung und wie man seine Rolle als ChefIn annimmt und ausfüllt. Wir schauen mit etwas Ruhe und Abstand auf Ihre derzeitige Tätigkeit, schauen zurück den Weg entlang, den Sie bereits gegangen sind und reflektieren darüber, in welcher Richtung es ab hier weitergehen soll.",
+        teaser: "Du reflektierst über Ideale, Realität & Zwänge, Deine persönliche Entwicklung und wie Du Deine Rolle als Chef:in annimmst und ausfüllst. Wir schauen mit etwas Ruhe und Abstand auf Deine derzeitige Tätigkeit, blicken zurück den Weg entlang, den Du bereits gegangen bist und reflektieren darüber, in welcher Richtung es ab hier weitergehen soll.",
         paragraphs: [
-            "Der Workshop richtet sich an ChefInnen von Tierarztpraxen und LeiterInnen von Vet. Behörden. Der Workshop hat das Ziel, kurz innezuhalten und in der wertschätzenden und mitfühlenden Atmosphäre von KollegInnen zu prüfen, wohin Ihr innerer Kompass zeigt und wie Sie den Weg dorthin finden können – trotz aller Widrigkeiten und Hindernisse.",
-            "Anhand von neuen Erkenntnissen und guten Ideen für die Zukunft soll sich die berufliche Zufriedenheit erhöhen."
+            "Der Workshop richtet sich an Dich als Chef:in einer Tierarztpraxis oder Leiter:in einer Vet. Behörde. Der Workshop hat das Ziel, kurz innezuhalten und in der wertschätzenden und mitfühlenden Atmosphäre von Kolleg:innen zu prüfen, wohin Dein innerer Kompass zeigt und wie Du den Weg dorthin finden kannst – trotz aller Widrigkeiten und Hindernisse.",
+            "Anhand von neuen Erkenntnissen und mit Hilfe von guten Ideen für Deine nächsten Schritte wird sich Deine berufliche Zufriedenheit erhöhen."
         ],
         note: ""
     },
@@ -113,8 +113,8 @@ const DEFAULT_SEMINARS = [
         ],
         teaser: "Diese und ähnliche Themen des beruflichen Miteinanders von Menschen sind Themen und Inhalte einer Supervision. Man schaut in Begleitung einer professionellen Kraft „aus der Vogelperspektive“ auf den Fall / das Thema, mit dem es einem so schlecht geht. Was ist da eigentlich wirklich zwischen uns passiert? Wie mag es dem anderen damit gehen? Was fühle ich? Und was brauche ich? Wie bekomme ich das Heft des Handelns (wieder) in meine Hand? Was kann ich tun, um meine Bedürfnisse zu befriedigen?",
         paragraphs: [
-            "Der Workshop ist als Supervisionseinheit aufgebaut, damit die Teilnehmenden das gemeinsame Arbeiten kennenlernen und eventuelle Berührungsängste abbauen können. Er richtet sich an alle Personen, die in Tierarztpraxen oder Vet. Behörden beschäftigt sind. Die theoretischen Inhalte werden anhand von echten Beispielen der Teilnehmenden erklärt und damit gleich praktisch nutzbar gemacht.",
-            "Der Workshop hat das Ziel, das Miteinander auf der Beziehungsebene in den Blick zu nehmen und anhand von neuen Erkenntnissen Verständnis füreinander zu schaffen, das Miteinander zu erleichtern und die berufliche Zufriedenheit zu erhöhen."
+            "Der Workshop ist als Supervisionseinheit aufgebaut, damit Ihr als Teilnehmende das gemeinsame Arbeiten und die Vorzüge der Supervision kennenlernt. Er richtet sich an alle Personen, die in Tierarztpraxen oder Vet. Behörden beschäftigt sind. Die theoretischen Inhalte erkläre ich Euch anhand von Euren aktuellen Beispielen, damit sie gleich praktisch für Euch nutzbar sind.",
+            "Der Workshop hat das Ziel, das Miteinander auf der Beziehungsebene in den Blick zu nehmen. Dabei begleite ich Dich und Euch dabei, neue Erkenntnisse über das eigene Verhalten und die Dynamiken im Team zu gewinnen. So entsteht ein tieferes Verständnis füreinander, das den Alltag erleichtert, Konflikte entschärft und die berufliche Zufriedenheit nachhaltig stärkt."
         ],
         note: "Hinweis: Dieses Thema steht nicht als Vortrag im Angebot."
     },
@@ -124,7 +124,7 @@ const DEFAULT_SEMINARS = [
         audience: "Alle Beschäftigten in Tierarztpraxen",
         quotes: [
             "„Burn-Out, lange Krankschreibungen und häufige Kündigungen sind bei uns an der Tagesordnung.“",
-            "„Ich kann arbeiten, soviel es geht; aber meinen ChefInnen ist es nie (gut) genug.“",
+            "„Ich kann arbeiten, soviel es geht; aber meinen Chef:innen ist es nie (gut) genug.“",
             "„Angst, Ärger, Wut und Schuldzuweisungen sind bei uns an der Tagesordnung.“",
             "„Meine Ängste bestimmen mein Leben.“",
             "„Der Tod einer Kollegin hat unser ganzes Team traumatisiert.“"
@@ -132,9 +132,9 @@ const DEFAULT_SEMINARS = [
         teaser: "Mental Health – die psychische Gesundheit, der Geisteszustand… Gibt es eine Grenze zwischen gesund und krank? Was gefährdet unsere psychische Gesundheit häufig in der Tierarztpraxis? Was kann ich tun, um für mich zu sorgen?",
         paragraphs: [
             "Der Vortrag richtet sich an alle Personen, die in Tierarztpraxen beschäftigt sind. Die theoretischen Inhalte werden anhand von skizzierten Beispielen erklärt. Ziel ist es, einen Überblick zu geben, welche häufig auftretenden Probleme in Tierarztpraxen die psychische Gesundheit der Menschen gefährden und welche eigenen Möglichkeiten man hat, um für sich zu sorgen.",
-            "Zudem wird aufgezeigt, welche professionellen Angebote es gibt, um für sich allein oder im Team an Problemlösungen zu arbeiten und berufliche Zufriedenheit (wieder-)herzustellen."
+            "Zudem möchte ich Dir aufzeigen, welche professionellen Angebote es gibt, damit Du für Dich selbst oder im Team an Problemlösungen arbeiten und berufliche Zufriedenheit (wieder-)herzustellen kannst."
         ],
-        note: "Hinweis: Dieses Thema steht nur als Vortrag im Angebot."
+        note: "Hinweis: Dieses Thema steht nur als (interaktiver) Vortrag im Angebot."
     },
     {
         id: "sem-9",
@@ -148,7 +148,7 @@ const DEFAULT_SEMINARS = [
         ],
         teaser: "Die Übergabe einer Praxis ist eine heikle Zeit, nicht nur für den/die SeniorpartnerIn, auch für das Team und die neue Leitung. Das finanzielle und rechtliche ist geklärt, aber haben auch alle Beteiligten verarbeitet, was dieser Umschwung bedeutet? Ist klar, wie es weitergeht? Gibt es alternative Szenarien, wenn der gewählte Weg nicht gut läuft?",
         paragraphs: [
-            "Der Workshop richtet sich an ChefInnen von Tierarztpraxen, die sich im Umbruch befinden. Er hat das Ziel, kurz innezuhalten und in der wertschätzenden und mitfühlenden Atmosphäre von KollegInnen in der gleichen Lebenssituation zu prüfen, ob auch im Herzen alles geklärt ist. Wir klopfen ab, ob das Team wirklich mitgenommen wurde und ob die Ausscheidenden und die Nachfolgenden auch auf der Beziehungsebene alles geklärt haben.",
+            "Der Workshop richtet sich an Dich, wenn Du Chef:in einer Tierarztpraxis oder -Klinik bist, die sich im Umbruch befindet – egal, ob Du der abgebende oder der übernehmende Part bist. Du hast hier Gelegenheit, kurz innezuhalten und in der wertschätzenden und mitfühlenden Atmosphäre von Kolleg:innen in der gleichen Lebenssituation zu prüfen, ob Du auch im Herzen alles geklärt hast. Wir klopfen ab, ob Ihr das Team wirklich mitgenommen habt und ob die Ausscheidenden und die Nachfolgenden auch auf der Beziehungsebene alles geklärt haben.",
             "Die theoretischen Inhalte sollen anhand von echten Beispielen der Teilnehmenden erklärt und damit gleich praktisch nutzbar gemacht werden. Der Workshop hat das Ziel, das Miteinander auf der Beziehungsebene in den Blick zu nehmen und anhand von neuen Erkenntnissen Verständnis füreinander zu schaffen und die Praxisübergabe zu aller Zufriedenheit zu gestalten."
         ],
         note: ""
@@ -158,9 +158,9 @@ const DEFAULT_SEMINARS = [
 document.addEventListener('DOMContentLoaded', () => {
     // 1. DATA SEEDING (Seed/Update to authentic seminars)
     const currentVersion = localStorage.getItem('sf_seminars_version');
-    if (currentVersion !== 'v5') {
+    if (currentVersion !== 'v6') {
         localStorage.setItem('sf_seminars', JSON.stringify(DEFAULT_SEMINARS));
-        localStorage.setItem('sf_seminars_version', 'v5');
+        localStorage.setItem('sf_seminars_version', 'v6');
     }
 
     // 2. RENDER SEMINARS ON HOMEPAGE
@@ -380,23 +380,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 7. EVENT DELEGATION FOR SERVICE LINK SELECTION
+    // 7. EVENT DELEGATION FOR CONTACT LINKS & SMART ORIGIN SCROLL RESTORATION
     document.addEventListener('click', (e) => {
-        const link = e.target.closest('.service-contact-link');
-        if (link) {
-            const serviceVal = link.getAttribute('data-service');
-            const seminarTitle = link.getAttribute('data-seminar-title');
-            const formatSelect = document.getElementById('format');
-            if (formatSelect && serviceVal) {
-                formatSelect.value = serviceVal;
-            }
-            if (seminarTitle) {
-                const messageField = document.getElementById('message');
-                if (messageField) {
-                    messageField.value = `Guten Tag Frau Dr. Campe,\n\nich interessiere mich für das Thema:\n„${seminarTitle}“\n\nBitte senden Sie mir hierzu nähere Informationen zu.\n\nMit freundlichen Grüßen`;
+        const contactLink = e.target.closest('a[href="#contact"], .service-contact-link');
+        if (contactLink) {
+            // Save the exact current scroll position before navigating to #contact
+            const currentScrollY = window.scrollY;
+            sessionStorage.setItem('sf_contact_origin_scrollY', currentScrollY);
+
+            // Push history state with exact scroll position so browser back button returns precisely here
+            history.pushState({ originScrollY: currentScrollY, fromContact: true }, '', '#contact');
+
+            const link = e.target.closest('.service-contact-link');
+            if (link) {
+                const serviceVal = link.getAttribute('data-service');
+                const seminarTitle = link.getAttribute('data-seminar-title');
+                const formatSelect = document.getElementById('format');
+                if (formatSelect && serviceVal) {
+                    formatSelect.value = serviceVal;
+                }
+                if (seminarTitle) {
+                    const messageField = document.getElementById('message');
+                    if (messageField) {
+                        messageField.value = `Guten Tag Frau Dr. Campe,\n\nich interessiere mich für das Thema:\n„${seminarTitle}“\n\nBitte senden Sie mir hierzu nähere Informationen zu.\n\nMit freundlichen Grüßen`;
+                    }
                 }
             }
-            // If they clicked a link, reset the contact form to Step 1
+
+            // Reset the contact form to Step 1
             const panels = document.querySelectorAll('.form-step-panel');
             const steps = document.querySelectorAll('.form-step-indicator');
             const line1 = document.getElementById('stepLine1');
@@ -412,8 +423,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (line1) line1.classList.remove('active');
                 if (line2) line2.classList.remove('active');
             }
+
+            // Smoothly scroll down to contact section
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                e.preventDefault();
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
         }
     });
+
+    // Handle browser back button (Pfeil zurück) to reliably return to exact origin
+    window.addEventListener('popstate', (e) => {
+        if (e.state && typeof e.state.originScrollY === 'number') {
+            window.scrollTo({ top: e.state.originScrollY, behavior: 'smooth' });
+        } else {
+            const savedY = sessionStorage.getItem('sf_contact_origin_scrollY');
+            if (savedY !== null && !window.location.hash.includes('contact')) {
+                window.scrollTo({ top: parseFloat(savedY), behavior: 'smooth' });
+            }
+        }
+    });
+
+    // Handle in-page return button (#btnContactReturn)
+    const btnContactReturn = document.getElementById('btnContactReturn');
+    if (btnContactReturn) {
+        btnContactReturn.addEventListener('click', () => {
+            const savedY = sessionStorage.getItem('sf_contact_origin_scrollY');
+            if (savedY !== null) {
+                window.scrollTo({ top: parseFloat(savedY), behavior: 'smooth' });
+                if (window.location.hash === '#contact') {
+                    history.replaceState(null, '', window.location.pathname + window.location.search);
+                }
+            } else if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                const servicesSec = document.getElementById('services');
+                if (servicesSec) servicesSec.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
 });
 
 // Helper function to render seminars on the homepage

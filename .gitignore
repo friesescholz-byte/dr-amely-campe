@@ -3,3 +3,7 @@ docx_extracted/
 .DS_Store
 Thumbs.db
 *.tmp
+
+.env
+.dev.vars
+node_modules
