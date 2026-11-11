@@ -158,13 +158,16 @@ const DEFAULT_SEMINARS = [
 document.addEventListener('DOMContentLoaded', () => {
     // 1. DATA SEEDING (Seed/Update to authentic seminars)
     const currentVersion = localStorage.getItem('sf_seminars_version');
-    if (currentVersion !== 'v6') {
+    if (currentVersion !== 'v7') {
         localStorage.setItem('sf_seminars', JSON.stringify(DEFAULT_SEMINARS));
-        localStorage.setItem('sf_seminars_version', 'v6');
+        localStorage.setItem('sf_seminars_version', 'v7');
     }
 
     // 2. RENDER SEMINARS ON HOMEPAGE
     renderSeminars();
+
+    // 2b. INIT HAPTISCHER GEDANKEN-STACK (OPTION C - SCHOLZ & FRIESE UX PRO MAX)
+    initGedankenStack();
 
     // 3. STICKY HEADER
     const header = document.getElementById('siteHeader');
@@ -523,7 +526,12 @@ function renderSeminars() {
             <div class="seminar-card-content">
                 <div class="seminar-card-header">
                     <span class="seminar-card-badge">${escapeHtml(sem.audience || 'Tiermedizin')}</span>
-                    <h3>${escapeHtml(sem.title)}</h3>
+                    <div class="seminar-title-row">
+                        <h3>${escapeHtml(sem.title)}</h3>
+                        <span class="seminar-mobile-toggle" aria-hidden="true">
+                            <i data-lucide="chevron-down" class="seminar-mobile-chevron"></i>
+                        </span>
+                    </div>
                 </div>
                 ${quotesHtml}
                 <div class="seminar-card-teaser-wrapper">
@@ -551,10 +559,40 @@ function renderSeminars() {
             </div>
         `;
         
+        // Mobile Accordion: Click header to toggle open/close
+        const cardHeader = card.querySelector('.seminar-card-header');
+        if (cardHeader) {
+            cardHeader.addEventListener('click', (e) => {
+                if (window.innerWidth > 768) return;
+                e.stopPropagation();
+                const isMobileOpen = card.classList.contains('is-mobile-open');
+                // Close other open seminar cards
+                grid.querySelectorAll('.seminar-large-card.is-mobile-open').forEach(c => {
+                    if (c !== card) c.classList.remove('is-mobile-open');
+                });
+                if (isMobileOpen) {
+                    card.classList.remove('is-mobile-open');
+                } else {
+                    card.classList.add('is-mobile-open');
+                }
+            });
+        }
+
+        // When collapsed on mobile, clicking anywhere on the card expands it
+        card.addEventListener('click', (e) => {
+            if (window.innerWidth > 768) return;
+            if (card.classList.contains('is-mobile-open')) return;
+            if (e.target.closest('a') || e.target.closest('button')) return;
+            grid.querySelectorAll('.seminar-large-card.is-mobile-open').forEach(c => {
+                if (c !== card) c.classList.remove('is-mobile-open');
+            });
+            card.classList.add('is-mobile-open');
+        });
+
         grid.appendChild(card);
     });
 
-    // Expand/Collapse event listeners
+    // Expand/Collapse event listeners for desktop
     grid.querySelectorAll('.btn-toggle-seminar').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -575,6 +613,174 @@ function renderSeminars() {
     if (window.lucide) {
         window.lucide.createIcons();
     }
+}
+
+// ==========================================================================
+// HAPTISCHER GEDANKEN-STACK (OPTION C - SCHOLZ & FRIESE UX PRO MAX)
+// ==========================================================================
+function initGedankenStack() {
+    const stack = document.getElementById('gedankenCardsStack');
+    if (!stack) return;
+
+    const cards = Array.from(stack.querySelectorAll('.gedanken-card'));
+    if (cards.length === 0) return;
+
+    const totalQuoteCards = 8; // cards 0..7 are quotes, card 8 is the final resolution card
+    let currentIndex = 0;
+
+    const counterVal = document.getElementById('gedankenCounterVal');
+    const counterLabel = document.getElementById('gedankenCounterLabel');
+    const dashes = Array.from(document.querySelectorAll('#gedankenDashes .dash-item'));
+    const btnPrev = document.getElementById('btnGedankenPrev');
+    const btnNext = document.getElementById('btnGedankenNext');
+    const btnRestart = document.getElementById('btnGedankenRestart');
+
+    function updateStack(newIndex) {
+        if (newIndex < 0) newIndex = 0;
+        if (newIndex >= cards.length) newIndex = cards.length - 1;
+
+        currentIndex = newIndex;
+
+        cards.forEach((card, idx) => {
+            card.classList.remove('is-active', 'is-next', 'is-queued', 'is-queued-hidden', 'is-swiped-left', 'is-swiped-right');
+
+            if (idx === currentIndex) {
+                card.classList.add('is-active');
+            } else if (idx === currentIndex + 1) {
+                card.classList.add('is-next');
+            } else if (idx === currentIndex + 2) {
+                card.classList.add('is-queued');
+            } else if (idx > currentIndex + 2) {
+                card.classList.add('is-queued-hidden');
+            } else if (idx < currentIndex) {
+                card.classList.add('is-swiped-left');
+            }
+        });
+
+        // Update Counter
+        if (counterVal && counterLabel) {
+            if (currentIndex < totalQuoteCards) {
+                counterLabel.textContent = 'Gedanke aus dem Alltag';
+                counterVal.textContent = `${currentIndex + 1} von ${totalQuoteCards}`;
+            } else {
+                counterLabel.textContent = 'Fazit & Ausblick';
+                counterVal.textContent = 'Zusammenfassung';
+            }
+        }
+
+        // Update Dashes
+        dashes.forEach((dash, idx) => {
+            dash.classList.remove('active', 'completed');
+            if (currentIndex === cards.length - 1) {
+                dash.classList.add('completed');
+            } else if (idx === currentIndex) {
+                dash.classList.add('active');
+            } else if (idx < currentIndex) {
+                dash.classList.add('completed');
+            }
+        });
+
+        // Update Prev Button
+        if (btnPrev) {
+            btnPrev.disabled = currentIndex === 0;
+        }
+
+        // Update Next Button
+        if (btnNext) {
+            if (currentIndex < totalQuoteCards - 1) {
+                btnNext.style.display = 'inline-flex';
+                btnNext.innerHTML = '<span>Weiter</span><i data-lucide="arrow-right"></i>';
+            } else if (currentIndex === totalQuoteCards - 1) {
+                btnNext.style.display = 'inline-flex';
+                btnNext.innerHTML = '<span>Fazit ansehen</span><i data-lucide="arrow-right"></i>';
+            } else {
+                // Final card reached
+                btnNext.style.display = 'none';
+            }
+            if (window.lucide) window.lucide.createIcons();
+        }
+    }
+
+    // Card click: clicking active card advances to next (except final card)
+    cards.forEach((card, idx) => {
+        card.addEventListener('click', (e) => {
+            // Ignore clicks on links or restart button inside final card
+            if (e.target.closest('a') || e.target.closest('button')) return;
+            if (idx === currentIndex && currentIndex < cards.length - 1) {
+                updateStack(currentIndex + 1);
+            }
+        });
+    });
+
+    // Button Next
+    if (btnNext) {
+        btnNext.addEventListener('click', () => {
+            if (currentIndex < cards.length - 1) {
+                updateStack(currentIndex + 1);
+            }
+        });
+    }
+
+    // Button Prev
+    if (btnPrev) {
+        btnPrev.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                updateStack(currentIndex - 1);
+            }
+        });
+    }
+
+    // Restart button in final card
+    if (btnRestart) {
+        btnRestart.addEventListener('click', () => {
+            updateStack(0);
+        });
+    }
+
+    // Dash click navigation
+    dashes.forEach((dash, idx) => {
+        dash.addEventListener('click', () => {
+            updateStack(idx);
+        });
+    });
+
+    // Touch swipe support on stack
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let touchEndY = 0;
+
+    stack.addEventListener('touchstart', (e) => {
+        if (!e.changedTouches || e.changedTouches.length === 0) return;
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    stack.addEventListener('touchend', (e) => {
+        if (!e.changedTouches || e.changedTouches.length === 0) return;
+        touchEndX = e.changedTouches[0].screenX;
+        touchEndY = e.changedTouches[0].screenY;
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+
+        // Ensure horizontal swipe is dominant and significant (> 40px)
+        if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+            if (diffX < 0) {
+                // Swipe left -> Next card
+                if (currentIndex < cards.length - 1) {
+                    updateStack(currentIndex + 1);
+                }
+            } else {
+                // Swipe right -> Prev card
+                if (currentIndex > 0) {
+                    updateStack(currentIndex - 1);
+                }
+            }
+        }
+    }, { passive: true });
+
+    // Initialize stack state
+    updateStack(0);
 }
 
 // Simple HTML escaping helper to prevent XSS in localStorage data

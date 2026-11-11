@@ -25,6 +25,38 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css?v=2.2">
+
+    <!-- Schema.org / LocalBusiness JSON-LD (Scholz & Friese SEO Dominanz) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Dr. med. vet. Amely Campe - Supervision, Mediation & Seminare für Tiermedizin",
+      "image": "https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/dr-amely-campe-portrait.webp",
+      "@id": "https://dr-amely-campe.friese-scholz.workers.dev",
+      "url": "https://dr-amely-campe.friese-scholz.workers.dev",
+      "telephone": "+495111234567",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Staffhorst",
+        "addressLocality": "Staffhorst",
+        "postalCode": "27254",
+        "addressCountry": "DE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 52.7167,
+        "longitude": 8.9833
+      },
+      "description": "Professionelle Supervision, Mediation, Organisationsberatung und praxisnahe Seminare für Tierärzt:innen, tiermedizinische Praxisteams und Veterinärbehörden.",
+      "founder": {
+        "@type": "Person",
+        "name": "PD Dr. med. vet. Amely Campe",
+        "jobTitle": "Fachtierärztin für Epidemiologie, Supervisorin & Mediatorin (DGSv)"
+      },
+      "areaServed": ["DE-NI", "DE-HB", "DE-HH", "Deutschland"]
+    }
+    </script>
 </head>
 <body>
 
@@ -123,39 +155,112 @@
                     </p>
                 </div>
 
-                <!-- Right Column: 8 Numbered Moments -->
+                <!-- Right Column: Haptischer Gedanken-Stack (Scholz & Friese UX Pro Max) -->
                 <div class="wiedererkennung-right reveal" id="wiedererkennungRight">
-                    <div class="moment-item">
-                        <span class="moment-num">01</span>
-                        <p class="moment-text">Die/der Tierhalter:in ignoriert deinen Rat — und das Tier leidet weiter.</p>
-                    </div>
-                    <div class="moment-item">
-                        <span class="moment-num">02</span>
-                        <p class="moment-text">Es gibt schon viel zu lange Spannungen, Streit und halb ausgesprochene Vorwürfe im Team.</p>
-                    </div>
-                    <div class="moment-item">
-                        <span class="moment-num">03</span>
-                        <p class="moment-text">Du bist mal als berufener Retter der Tiere angetreten und jetzt bleibt nur noch viel Arbeit für wenig Geld und Wertschätzung.</p>
-                    </div>
-                    <div class="moment-item">
-                        <span class="moment-num">04</span>
-                        <p class="moment-text">Kund:innen sind unpünktlich, fordern unmögliches und drohen obendrein mit einer schlechten Online-Bewertung.</p>
-                    </div>
-                    <div class="moment-item">
-                        <span class="moment-num">05</span>
-                        <p class="moment-text">Deine Vorgesetzten fordern viel, sparen aber an Wertschätzung und Wahrnehmung.</p>
-                    </div>
-                    <div class="moment-item">
-                        <span class="moment-num">06</span>
-                        <p class="moment-text">Du willst Veränderung, findest aber keinen Ansatz.</p>
-                    </div>
-                    <div class="moment-item">
-                        <span class="moment-num">07</span>
-                        <p class="moment-text">Du bist schon viel zu lange Feuerlöscher und Chaosmanager:innen.</p>
-                    </div>
-                    <div class="moment-item">
-                        <span class="moment-num">08</span>
-                        <p class="moment-text">Praxismanagement und Zeitmanagement mögen für Andere hilfreich sein, bei Dir in der Praxis scheint das alles trotzdem nichts zu bringen und Du fragst Dich warum.</p>
+                    <div class="gedanken-stack-wrapper" id="gedankenStackWrapper">
+                        <div class="gedanken-stack-header-hint">
+                            <span class="gedanken-counter-label" id="gedankenCounterLabel">Gedanke aus dem Alltag</span>
+                            <span class="gedanken-counter-val" id="gedankenCounterVal">1 von 8</span>
+                        </div>
+
+                        <div class="gedanken-cards-stack" id="gedankenCardsStack" role="region" aria-label="Gedanken aus dem Praxisalltag">
+                            <!-- Card 1 -->
+                            <div class="gedanken-card is-active" data-index="0">
+                                <div class="gedanken-card-inner">
+                                    <div class="gedanken-quote-glyph">“</div>
+                                    <p class="gedanken-text">Die/der Tierhalter:in ignoriert deinen Rat — und das Tier leidet weiter.</p>
+                                </div>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="gedanken-card is-next" data-index="1">
+                                <div class="gedanken-card-inner">
+                                    <div class="gedanken-quote-glyph">“</div>
+                                    <p class="gedanken-text">Es gibt schon viel zu lange Spannungen, Streit und halb ausgesprochene Vorwürfe im Team.</p>
+                                </div>
+                            </div>
+                            <!-- Card 3 -->
+                            <div class="gedanken-card is-queued" data-index="2">
+                                <div class="gedanken-card-inner">
+                                    <div class="gedanken-quote-glyph">“</div>
+                                    <p class="gedanken-text">Du bist mal als berufener Retter der Tiere angetreten und jetzt bleibt nur noch viel Arbeit für wenig Geld und Wertschätzung.</p>
+                                </div>
+                            </div>
+                            <!-- Card 4 -->
+                            <div class="gedanken-card is-queued" data-index="3">
+                                <div class="gedanken-card-inner">
+                                    <div class="gedanken-quote-glyph">“</div>
+                                    <p class="gedanken-text">Kund:innen sind unpünktlich, fordern Unmögliches und drohen obendrein mit einer schlechten Online-Bewertung.</p>
+                                </div>
+                            </div>
+                            <!-- Card 5 -->
+                            <div class="gedanken-card is-queued" data-index="4">
+                                <div class="gedanken-card-inner">
+                                    <div class="gedanken-quote-glyph">“</div>
+                                    <p class="gedanken-text">Deine Vorgesetzten fordern viel, sparen aber an Wertschätzung und Wahrnehmung.</p>
+                                </div>
+                            </div>
+                            <!-- Card 6 -->
+                            <div class="gedanken-card is-queued" data-index="5">
+                                <div class="gedanken-card-inner">
+                                    <div class="gedanken-quote-glyph">“</div>
+                                    <p class="gedanken-text">Du willst Veränderung, findest aber keinen Ansatz.</p>
+                                </div>
+                            </div>
+                            <!-- Card 7 -->
+                            <div class="gedanken-card is-queued" data-index="6">
+                                <div class="gedanken-card-inner">
+                                    <div class="gedanken-quote-glyph">“</div>
+                                    <p class="gedanken-text">Du bist schon viel zu lange Feuerlöscher und Chaosmanager:in.</p>
+                                </div>
+                            </div>
+                            <!-- Card 8 -->
+                            <div class="gedanken-card is-queued" data-index="7">
+                                <div class="gedanken-card-inner">
+                                    <div class="gedanken-quote-glyph">“</div>
+                                    <p class="gedanken-text">Praxismanagement und Zeitmanagement mögen für Andere hilfreich sein, bei Dir in der Praxis scheint das alles trotzdem nichts zu bringen und Du fragst Dich warum.</p>
+                                </div>
+                            </div>
+                            <!-- Card 9: Finale Einordnung -->
+                            <div class="gedanken-card is-final-card is-queued" data-index="8">
+                                <div class="gedanken-card-inner final-card-inner">
+                                    <div class="final-card-tag">Du bist nicht allein</div>
+                                    <h3 class="final-card-title">Das ist kein persönliches Scheitern.</h3>
+                                    <p class="final-card-desc">
+                                        Es sind die typischen Dynamiken in tiermedizinischen Systemen. Mit professioneller Begleitung gewinnen wir Abstand und finden Wege, die wirklich entlasten.
+                                    </p>
+                                    <div class="final-card-buttons">
+                                        <a href="#contact" class="btn-sage" id="btnGedankenContact">Erstgespräch anfragen <i data-lucide="arrow-right"></i></a>
+                                        <button type="button" class="btn-text-link" id="btnGedankenRestart">
+                                            <i data-lucide="rotate-ccw" style="width:14px;height:14px;"></i>
+                                            <span>Noch einmal ansehen</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Steuerung & Fortschrittsleiste -->
+                        <div class="gedanken-stack-footer">
+                            <div class="gedanken-progress-dashes" id="gedankenDashes">
+                                <span class="dash-item active" data-index="0"></span>
+                                <span class="dash-item" data-index="1"></span>
+                                <span class="dash-item" data-index="2"></span>
+                                <span class="dash-item" data-index="3"></span>
+                                <span class="dash-item" data-index="4"></span>
+                                <span class="dash-item" data-index="5"></span>
+                                <span class="dash-item" data-index="6"></span>
+                                <span class="dash-item" data-index="7"></span>
+                            </div>
+                            <div class="gedanken-nav-buttons">
+                                <button type="button" class="btn-gedanken-ctrl" id="btnGedankenPrev" aria-label="Vorheriger Gedanke" disabled>
+                                    <i data-lucide="arrow-left"></i>
+                                </button>
+                                <button type="button" class="btn-gedanken-ctrl primary" id="btnGedankenNext" aria-label="Nächster Gedanke">
+                                    <span>Weiter</span>
+                                    <i data-lucide="arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -282,7 +387,7 @@
                             </span>
                             <h3 class="service-item-title">Gemeinsam Lernen</h3>
                             <p class="service-item-desc">
-                                Mit Hilfe der Organisationsberatung kann ich Stärken und Schwächen Deiner Praxis sichtbar machen. Du kannst ein Motto erarbeiten, Dir neue Ziele setzen, Strukturen anpassen, Stolpersteine entlarven u.v.m. — zunächst nur mit Dir und etwaigen Partner:innen und später gerne gemeinsam mit Deinem Team.
+                                In meinen praxisnahen Seminaren und Workshops widmen wir uns den echten Herausforderungen im Praxisalltag — von schwierigen Gesprächen mit Tierhalter:innen und Konflikten im Team über Führungskompetenz bis hin zu Mental Health und Selbstfürsorge in der Tiermedizin. Für Praxisteams, Führungskräfte und Behörden.
                             </p>
                             <a href="#contact" class="service-detail-link service-contact-link" data-service="seminar" id="linkSeminareAnchor">
                                 <span>Mehr Infos zu den Seminaren anfragen</span>

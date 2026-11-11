@@ -13,6 +13,9 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Cloudflare Turnstile Verification -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body class="admin-body">
 
@@ -26,6 +29,9 @@
             <p>Bitte geben Sie Ihr Passwort ein, um auf das Seminar-Verwaltungstool zuzugreifen.</p>
             <form id="loginForm">
                 <input type="password" id="password" placeholder="Passwort eingeben" required autofocus autocomplete="current-password">
+                <div style="display: flex; justify-content: center; margin: 16px 0;">
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAADlxsmrOPF3EvoQb" id="adminTurnstile"></div>
+                </div>
                 <button type="submit" class="btn btn-primary" style="width: 100%;">Anmelden <i data-lucide="unlock"></i></button>
             </form>
             <p id="errorMessage" style="color: #ef4444; margin-top: 16px; font-size: 0.88rem; display: none;">Falsches Passwort. Bitte versuchen Sie es erneut.</p>

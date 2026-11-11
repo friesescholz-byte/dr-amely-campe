@@ -617,39 +617,326 @@ a {
     max-width: 440px;
 }
 
+/* --- SECTION 2: HAPTISCHER GEDANKEN-STACK (SCHOLZ & FRIESE UX PRO MAX) --- */
 .wiedererkennung-right {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.gedanken-stack-wrapper {
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
 
-.moment-item {
-    display: grid;
-    grid-template-columns: 48px 1fr;
-    align-items: baseline;
-    gap: 20px;
-    padding: 24px 0;
-    border-bottom: 1px solid var(--color-border);
+.gedanken-stack-header-hint {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding: 0 4px;
 }
 
-.moment-item:first-child {
-    border-top: 1px solid var(--color-border);
-}
-
-.moment-num {
+.gedanken-counter-label {
     font-family: var(--font-main);
-    font-size: 1.12rem;
+    font-size: 0.78rem;
     font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-text-muted);
+}
+
+.gedanken-counter-val {
+    font-family: var(--font-main);
+    font-size: 0.82rem;
+    font-weight: 600;
     color: var(--color-accent-teal);
     letter-spacing: 0.05em;
 }
 
-.moment-text {
+.gedanken-cards-stack {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    perspective: 1200px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.gedanken-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(35, 39, 37, 0.09);
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(35, 39, 37, 0.05);
+    padding: 36px 36px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.3s ease;
+    will-change: transform, opacity;
+}
+
+.gedanken-card:hover {
+    box-shadow: 0 16px 40px rgba(35, 39, 37, 0.08);
+}
+
+/* Layering states */
+.gedanken-card.is-active {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+}
+
+.gedanken-card.is-next {
+    transform: translate3d(0, 14px, 0) scale(0.96);
+    opacity: 0.72;
+    z-index: 4;
+    pointer-events: none;
+    background-color: #FAF8F4;
+}
+
+.gedanken-card.is-queued {
+    transform: translate3d(0, 26px, 0) scale(0.92);
+    opacity: 0.4;
+    z-index: 3;
+    pointer-events: none;
+    background-color: #F5F3ED;
+}
+
+.gedanken-card.is-queued-hidden {
+    transform: translate3d(0, 36px, 0) scale(0.88);
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.gedanken-card.is-swiped-left {
+    transform: translate3d(-115%, -10px, 0) rotate(-6deg);
+    opacity: 0;
+    z-index: 6;
+    pointer-events: none;
+}
+
+.gedanken-card.is-swiped-right {
+    transform: translate3d(115%, -10px, 0) rotate(6deg);
+    opacity: 0;
+    z-index: 6;
+    pointer-events: none;
+}
+
+.gedanken-card-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.gedanken-quote-glyph {
     font-family: var(--font-serif);
-    font-size: clamp(1.35rem, 2vw, 1.85rem);
-    font-weight: 500;
+    font-size: 3.5rem;
+    line-height: 0.8;
+    color: var(--color-accent-teal);
+    opacity: 0.85;
+    margin-bottom: 8px;
+}
+
+.gedanken-text {
+    font-family: var(--font-serif);
+    font-size: clamp(1.45rem, 2.3vw, 1.85rem);
     line-height: 1.35;
+    font-weight: 500;
     color: var(--color-anthrazit);
+    margin: auto 0;
+}
+
+.gedanken-card-action {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(35, 39, 37, 0.06);
+    color: var(--color-text-muted);
+    font-family: var(--font-main);
+    font-size: 0.82rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.gedanken-card:hover .gedanken-card-action {
+    color: var(--color-accent-teal);
+}
+
+.tap-hint-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: rgba(35, 39, 37, 0.04);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.tap-hint-icon svg {
+    width: 13px;
+    height: 13px;
+}
+
+.gedanken-card:hover .tap-hint-icon {
+    transform: translateX(3px);
+    background-color: var(--color-accent-teal);
+    color: #FFFFFF;
+}
+
+/* Final card */
+.final-card-inner {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 10px 0;
+}
+
+.final-card-tag {
+    display: inline-block;
+    padding: 4px 14px;
+    background-color: var(--color-bg-schlamm);
+    border-radius: var(--radius-xs);
+    font-family: var(--font-main);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-anthrazit);
+}
+
+.final-card-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.7rem, 2.5vw, 2.1rem);
+    line-height: 1.22;
+    color: var(--color-anthrazit);
+    font-weight: 600;
     margin: 0;
+}
+
+.final-card-desc {
+    font-family: var(--font-main);
+    font-size: 0.96rem;
+    line-height: 1.62;
+    color: var(--color-text-muted);
+    max-width: 440px;
+    margin: 0;
+}
+
+.final-card-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+    width: 100%;
+}
+
+.final-card-buttons .btn-sage {
+    padding: 13px 28px;
+    font-size: 0.88rem;
+}
+
+/* Controls & Dashes */
+.gedanken-stack-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 36px;
+    padding: 0 4px;
+}
+
+.gedanken-progress-dashes {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dash-item {
+    width: 22px;
+    height: 3px;
+    background-color: rgba(35, 39, 37, 0.15);
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    cursor: pointer;
+}
+
+.dash-item.active {
+    width: 38px;
+    background-color: var(--color-accent-teal);
+}
+
+.dash-item.completed {
+    background-color: rgba(35, 39, 37, 0.35);
+}
+
+.gedanken-nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-gedanken-ctrl {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 40px;
+    padding: 0 16px;
+    background-color: transparent;
+    border: 1px solid rgba(35, 39, 37, 0.15);
+    border-radius: var(--radius-xs);
+    color: var(--color-anthrazit);
+    font-family: var(--font-main);
+    font-size: 0.84rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-gedanken-ctrl svg {
+    width: 15px;
+    height: 15px;
+}
+
+.btn-gedanken-ctrl:hover:not(:disabled) {
+    background-color: #FFFFFF;
+    border-color: var(--color-anthrazit);
+    transform: translateY(-1px);
+}
+
+.btn-gedanken-ctrl:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.btn-gedanken-ctrl.primary {
+    background-color: var(--color-anthrazit);
+    color: #FFFFFF;
+    border-color: var(--color-anthrazit);
+}
+
+.btn-gedanken-ctrl.primary:hover:not(:disabled) {
+    background-color: var(--color-btn-sage-hover);
+    border-color: var(--color-btn-sage-hover);
 }
 
 /* --- SECTION 3: KOMBINATION & QUALIFIKATIONEN (SCREENSHOT 3) --- */
@@ -1063,6 +1350,18 @@ a {
     text-transform: uppercase;
     margin-bottom: 8px;
     border: 1px solid var(--color-border-subtle);
+}
+
+.seminar-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+}
+
+.seminar-mobile-toggle {
+    display: none;
 }
 
 .seminar-large-card h3 {
@@ -2927,19 +3226,68 @@ textarea.admin-form-control {
         line-height: 1.65;
     }
 
-    .moment-item {
-        grid-template-columns: 36px 1fr;
+    /* Wiedererkennung - Gedanken-Stack Mobile (Scholz & Friese UX Pro Max) */
+    .gedanken-stack-wrapper {
+        max-width: 100%;
+    }
+
+    .gedanken-cards-stack {
+        height: 350px;
+    }
+
+    .gedanken-card {
+        padding: 24px 22px 20px;
+        border-radius: var(--radius-xs);
+    }
+
+    .gedanken-quote-glyph {
+        font-size: 2.8rem;
+        margin-bottom: 2px;
+    }
+
+    .gedanken-text {
+        font-size: clamp(1.18rem, 4.5vw, 1.38rem);
+        line-height: 1.35;
+    }
+
+    .gedanken-card-action {
+        padding-top: 14px;
+        font-size: 0.78rem;
+    }
+
+    .final-card-title {
+        font-size: 1.45rem;
+        line-height: 1.25;
+    }
+
+    .final-card-desc {
+        font-size: 0.88rem;
+        line-height: 1.55;
+    }
+
+    .gedanken-stack-footer {
+        margin-top: 24px;
+        flex-wrap: wrap;
         gap: 14px;
-        padding: 16px 0;
     }
 
-    .moment-num {
-        font-size: 1.0rem;
+    .gedanken-progress-dashes {
+        gap: 4px;
     }
 
-    .moment-text {
-        font-size: clamp(1.1rem, 4.2vw, 1.32rem);
-        line-height: 1.4;
+    .dash-item {
+        width: 16px;
+        height: 3px;
+    }
+
+    .dash-item.active {
+        width: 28px;
+    }
+
+    .btn-gedanken-ctrl {
+        height: 38px;
+        padding: 0 14px;
+        font-size: 0.82rem;
     }
 
     /* Quote Section (Philosophie) */
@@ -3020,19 +3368,22 @@ textarea.admin-form-control {
 
     .seminar-cards-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 12px;
     }
 
     .seminar-large-card {
-        padding: 26px 20px;
+        padding: 16px 18px;
         border-radius: var(--radius-xs);
+        border: 1px solid rgba(35, 39, 37, 0.1);
+        background-color: #FFFFFF;
+        transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
         min-height: auto !important;
         height: auto !important;
+        cursor: pointer;
     }
 
-    .seminar-large-card:not(.is-expanded) {
-        min-height: auto !important;
-        height: auto !important;
+    .seminar-large-card:hover {
+        border-color: rgba(35, 39, 37, 0.2);
     }
 
     .seminar-large-card:last-child:nth-child(odd) {
@@ -3043,54 +3394,133 @@ textarea.admin-form-control {
 
     .seminar-card-header {
         min-height: auto;
+        margin-bottom: 0;
+    }
+
+    .seminar-title-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        width: 100%;
     }
 
     .seminar-large-card h3 {
+        font-family: var(--font-serif);
+        font-size: 1.15rem;
+        font-weight: 600;
+        line-height: 1.35;
+        color: var(--color-anthrazit);
+        margin: 0;
         min-height: auto;
-        font-size: 1.32rem;
-        line-height: 1.25;
+        flex: 1;
+    }
+
+    .seminar-mobile-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: rgba(35, 39, 37, 0.04);
+        color: var(--color-anthrazit);
+        flex-shrink: 0;
+        transition: transform 0.3s ease, background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .seminar-mobile-toggle svg {
+        width: 16px;
+        height: 16px;
+        transition: transform 0.3s ease;
+    }
+
+    /* By default on mobile: ONLY THE TITLE IS VISIBLE! */
+    .seminar-large-card:not(.is-mobile-open) .seminar-card-badge,
+    .seminar-large-card:not(.is-mobile-open) .seminar-quotes-box,
+    .seminar-large-card:not(.is-mobile-open) .seminar-card-teaser-wrapper,
+    .seminar-large-card:not(.is-mobile-open) .seminar-card-details-wrapper,
+    .seminar-large-card:not(.is-mobile-open) .seminar-card-footer {
+        display: none !important;
+    }
+
+    /* When expanded on mobile: show full content smoothly! */
+    .seminar-large-card.is-mobile-open {
+        padding: 22px 20px 22px;
+        border-color: var(--color-accent-teal);
+        box-shadow: 0 10px 30px rgba(35, 39, 37, 0.06);
+        cursor: default;
+    }
+
+    .seminar-large-card.is-mobile-open .seminar-card-header {
+        margin-bottom: 12px;
+    }
+
+    .seminar-large-card.is-mobile-open .seminar-card-badge {
+        display: inline-block !important;
         margin-bottom: 10px;
     }
 
-    .seminar-quotes-box {
+    .seminar-large-card.is-mobile-open .seminar-mobile-toggle {
+        background-color: var(--color-accent-teal);
+        color: #FFFFFF;
+    }
+
+    .seminar-large-card.is-mobile-open .seminar-mobile-toggle svg {
+        transform: rotate(180deg);
+    }
+
+    .seminar-large-card.is-mobile-open .seminar-quotes-box {
+        display: block !important;
         min-height: auto;
         padding: 14px 16px;
         margin: 12px 0 16px;
     }
 
-    .seminar-quotes-list li {
+    .seminar-large-card.is-mobile-open .seminar-quotes-list li {
         font-size: 0.9rem;
         line-height: 1.5;
     }
 
-    .seminar-card-teaser-wrapper {
+    .seminar-large-card.is-mobile-open .seminar-card-teaser-wrapper {
+        display: block !important;
         min-height: auto;
+        margin-bottom: 14px;
     }
 
-    .seminar-card-desc {
+    .seminar-large-card.is-mobile-open .seminar-card-desc {
         font-size: 0.92rem;
         line-height: 1.62;
     }
 
-    .seminar-card-footer {
+    .seminar-large-card.is-mobile-open .seminar-card-details-wrapper {
+        display: block !important;
+        opacity: 1 !important;
+        grid-template-rows: 1fr !important;
+        margin-bottom: 14px;
+    }
+
+    .seminar-large-card.is-mobile-open .seminar-card-footer {
+        display: flex !important;
         flex-direction: column;
         align-items: stretch;
         gap: 10px;
         padding-top: 16px;
+        border-top: 1px solid rgba(35, 39, 37, 0.08);
     }
 
-    .btn-toggle-seminar {
-        width: 100%;
-        justify-content: center;
-        padding: 10px 16px;
-        font-size: 0.86rem;
+    .seminar-large-card.is-mobile-open .btn-toggle-seminar {
+        display: none !important;
     }
 
-    .seminar-card-footer .service-contact-link {
+    .seminar-large-card.is-mobile-open .service-contact-link {
         width: 100%;
         justify-content: center;
         text-align: center;
-        padding: 10px 0;
+        padding: 12px 18px;
+        background-color: var(--color-bg-sand);
+        border-radius: var(--radius-xs);
+        font-weight: 600;
     }
 
     #seminarActionWrapper .btn-sage {
