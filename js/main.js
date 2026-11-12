@@ -240,8 +240,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll(); // Run immediately
 
-    // 6. HERO SLIDESHOW CONTROLLER (5-second auto-advance + interactive dots)
+    // 6. HERO SLIDESHOW CONTROLLER (Synchrone Vordergrund- & Hintergrund-Slideshow)
     const heroSlides = document.querySelectorAll('.hero-slide');
+    const heroBgSlides = document.querySelectorAll('.hero-bg-slide');
     const heroDots = document.querySelectorAll('.slider-indicator .dot');
     let currentHeroSlide = 0;
     let heroInterval = null;
@@ -252,6 +253,11 @@ document.addEventListener('DOMContentLoaded', () => {
         heroSlides.forEach((s, idx) => {
             s.classList.toggle('active', idx === currentHeroSlide);
         });
+        if (heroBgSlides.length > 0) {
+            heroBgSlides.forEach((b, idx) => {
+                b.classList.toggle('active', idx === currentHeroSlide);
+            });
+        }
         heroDots.forEach((d, idx) => {
             d.classList.toggle('active', idx === currentHeroSlide);
         });
@@ -261,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (heroInterval) clearInterval(heroInterval);
         heroInterval = setInterval(() => {
             goToHeroSlide(currentHeroSlide + 1);
-        }, 5000);
+        }, 6000);
     }
 
     heroDots.forEach((dot) => {
@@ -269,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const idx = parseInt(dot.getAttribute('data-index'), 10);
             goToHeroSlide(idx);
-            startHeroSlideShow(); // restart the 5s timer on manual click
+            startHeroSlideShow();
         });
     });
 
@@ -656,6 +662,9 @@ function initGedankenStack() {
                 card.classList.add('is-swiped-left');
             }
         });
+
+        // Toggle final card class on stack for smooth height adaptation
+        stack.classList.toggle('is-showing-final', currentIndex === cards.length - 1);
 
         // Update Counter
         if (counterVal && counterLabel) {

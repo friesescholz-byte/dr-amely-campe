@@ -96,6 +96,23 @@
         
         <!-- HERO SECTION (SCREENSHOT 1 WITH 4-SLIDE SMOOTH SLIDESHOW) -->
         <section class="section hero-section" id="home">
+            <!-- HERO BACKGROUND SLIDESHOW LAYER (ZART & FESTSTEHEND IM HINTERGRUND) -->
+            <div class="hero-bg-slider" id="heroBgSlider" aria-hidden="true">
+                <div class="hero-bg-slide active" data-slide="0">
+                    <img src="images/hero_drone_ocean_beach.webp" alt="" class="hero-bg-img">
+                </div>
+                <div class="hero-bg-slide" data-slide="1">
+                    <img src="images/hero_nordic_river.webp" alt="" class="hero-bg-img">
+                </div>
+                <div class="hero-bg-slide" data-slide="2">
+                    <img src="images/hero_moewe_weit.webp" alt="" class="hero-bg-img">
+                </div>
+                <div class="hero-bg-slide" data-slide="3">
+                    <img src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/dr-amely-campe/photo-1500382017468-9049fed747ef_ergebnis.webp" alt="" class="hero-bg-img">
+                </div>
+                <div class="hero-bg-overlay"></div>
+            </div>
+
             <div class="container hero-grid">
                 <!-- Left: Slideshow with 4 Images & Interactive Indicator -->
                 <div class="hero-image-col reveal active" id="heroImageContainer">
@@ -143,6 +160,10 @@
 
         <!-- SECTION 2: MOMENTE (WIEDERERKENNUNG) -->
         <section class="section wiedererkennung-section" id="wiedererkennung">
+            <!-- Bespoke 2-Bird Vector Pattern -->
+            <div class="wiedererkennung-bg-pattern" aria-hidden="true">
+                <img src="images/wiedererkennung_bird_pattern.svg" alt="" class="wiedererkennung-pattern-img" loading="lazy">
+            </div>
             <div class="container wiedererkennung-grid">
                 <!-- Left Column -->
                 <div class="wiedererkennung-left reveal" id="wiedererkennungLeft">
@@ -268,6 +289,26 @@
 
         <!-- PHILOSOPHY / STATEMENT QUOTE SECTION (PLATZIERT DIREKT HINTER DER WIEDERERKENNUNG) -->
         <section class="section quote-section" id="philosophie">
+            <!-- Curved Top Wave (Gentle organic transition from #wiedererkennung into quote) -->
+            <div class="section-curve-divider curve-top" aria-hidden="true">
+                <svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none">
+                    <path d="M0,0 L1440,0 L1440,16 C1060,54 420,-12 0,36 Z" fill="var(--color-bg-greige)" />
+                </svg>
+            </div>
+
+            <!-- Fixed Background Seagull Layer (Atmospheric, calm, fixed parallax) -->
+            <div class="quote-bg-layer" aria-hidden="true">
+                <div class="quote-bg-fixed-img"></div>
+                <div class="quote-bg-overlay"></div>
+            </div>
+
+            <!-- Curved Bottom Wave (Gentle organic transition into #services) -->
+            <div class="section-curve-divider curve-bottom" aria-hidden="true">
+                <svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none">
+                    <path d="M0,38 C380,-6 1040,56 1440,18 L1440,60 L0,60 Z" fill="var(--color-bg-greige)" />
+                </svg>
+            </div>
+
             <div class="container">
                 <div class="quote-container reveal" id="quoteContainer">
                     <div class="quote-symbol" aria-hidden="true">
@@ -289,6 +330,10 @@
 
         <!-- SERVICES / MEIN ANGEBOT SECTION -->
         <section class="section services-section" id="services">
+            <!-- Bespoke Bird & Thermal Vector Pattern Background (like Hero, pure vector) -->
+            <div class="services-bg-pattern" aria-hidden="true">
+                <img src="images/services_bird_pattern.svg" alt="" class="services-pattern-img" loading="lazy">
+            </div>
             <div class="container">
                 <!-- Section Header -->
                 <div class="services-main-header reveal" id="servicesHeader">
@@ -407,6 +452,11 @@
 
         <!-- SEMINARS SECTION -->
         <section class="section seminar-section" id="seminare">
+            <!-- Fixed Atmospheric Nature Background Layer -->
+            <div class="seminar-bg-layer" aria-hidden="true">
+                <div class="seminar-bg-fixed-img"></div>
+                <div class="seminar-bg-overlay"></div>
+            </div>
             <div class="container">
                 <div class="seminar-header reveal" id="seminarTextWrapper">
                     <span class="eyebrow-dash" id="seminarEyebrow"><span class="dash">—</span> VORTRÄGE, SEMINARE & WORKSHOPS</span>
@@ -544,6 +594,10 @@
 
         <!-- SECTION: KOMBINATION & QUALIFIKATIONEN -->
         <section class="section combination-section" id="qualifikationen">
+            <!-- Bespoke 2-Bird Vector Pattern (Tierärztin & Supervisorin) -->
+            <div class="combination-bg-pattern" aria-hidden="true">
+                <img src="images/combination_bird_pattern.svg" alt="" class="combination-pattern-img" loading="lazy">
+            </div>
             <div class="container combination-grid">
                 <!-- Left Column: Big Statement Headline -->
                 <div class="combination-left reveal" id="combinationLeft">
@@ -589,6 +643,11 @@
 
         <!-- TESTIMONIALS / GOOGLE REVIEW SHOWCASE SECTION (ECHTES TRANSPARENTES FEEDBACK) -->
         <section class="section testimonials-section" id="testimonials">
+            <!-- Fixed Atmospheric Background Layer -->
+            <div class="testimonials-bg-layer" aria-hidden="true">
+                <div class="testimonials-bg-fixed-img"></div>
+                <div class="testimonials-bg-overlay"></div>
+            </div>
             <div class="container">
                 <div class="testimonials-intro reveal">
                     <span class="eyebrow-dash"><span class="dash">—</span> KUNDENSTIMMEN</span>
@@ -625,6 +684,10 @@
 
         <!-- CONTACT SECTION -->
         <section class="section contact-section" id="contact">
+            <!-- Bespoke Serene Pause Vector Pattern (Person taking a mindful break) -->
+            <div class="contact-bg-pattern" aria-hidden="true">
+                <img src="images/contact_pause_pattern.svg" alt="" class="contact-pattern-img" loading="lazy">
+            </div>
             <div class="container grid-2 contact-grid">
                 <div class="contact-info reveal" id="contactInfoWrapper">
                     <span class="eyebrow-dash" id="contactEyebrow"><span class="dash">—</span> KONTAKT</span>

@@ -1,0 +1,118 @@
+<svg viewBox="0 0 1440 1800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" class="services-pattern-svg">
+  <defs>
+    <!-- Calm Gradients for Depth -->
+    <linearGradient id="servAirGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#232725" stop-opacity="0" />
+      <stop offset="25%" stop-color="#232725" stop-opacity="0.04" />
+      <stop offset="50%" stop-color="#1F4E5B" stop-opacity="0.065" />
+      <stop offset="75%" stop-color="#232725" stop-opacity="0.035" />
+      <stop offset="100%" stop-color="#232725" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="servBirdFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1F4E5B" stop-opacity="0.05" />
+      <stop offset="60%" stop-color="#232725" stop-opacity="0.035" />
+      <stop offset="100%" stop-color="#1F4E5B" stop-opacity="0.02" />
+    </linearGradient>
+
+    <linearGradient id="servBirdStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1F4E5B" stop-opacity="0.12" />
+      <stop offset="70%" stop-color="#232725" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#1F4E5B" stop-opacity="0.04" />
+    </linearGradient>
+
+    <!-- Micro Dot Texture (calm paper feel) -->
+    <pattern id="servMicroDots" width="56" height="56" patternUnits="userSpaceOnUse">
+      <circle cx="28" cy="28" r="0.8" fill="#232725" fill-opacity="0.025" />
+    </pattern>
+  </defs>
+
+  <!-- Base Micro Dots -->
+  <rect width="100%" height="100%" fill="url(#servMicroDots)" />
+
+  <!-- Flowing Calm Thermal Streamlines across the section -->
+  <g class="services-airstreams" stroke="url(#servAirGrad)" fill="none" stroke-linecap="round">
+    <!-- Streamline 1 (Header region) -->
+    <path d="M -80,120 C 300,70 650,160 1020,100 C 1260,60 1440,120 1560,90" stroke-width="1.0" />
+    <!-- Streamline 2 (Supervision card) -->
+    <path d="M -100,290 C 240,240 560,340 920,270 C 1220,210 1400,280 1580,250" stroke-width="0.85" stroke-dasharray="5 9" />
+    <!-- Streamline 3 (Between Supervision & Mediation) -->
+    <path d="M -60,540 C 320,490 680,590 1060,510 C 1280,460 1460,530 1600,490" stroke-width="1.1" />
+    <!-- Streamline 4 (Mediation card) -->
+    <path d="M -120,780 C 260,730 600,820 960,750 C 1260,690 1420,770 1620,730" stroke-width="0.85" stroke-dasharray="4 8" />
+    <!-- Streamline 5 (Organisationsberatung card) -->
+    <path d="M -80,1050 C 300,990 640,1090 1020,1020 C 1300,960 1480,1040 1620,1000" stroke-width="1.0" />
+    <!-- Streamline 6 (Between Org & Seminare) -->
+    <path d="M -100,1320 C 240,1270 560,1370 940,1300 C 1240,1240 1420,1320 1600,1280" stroke-width="0.9" stroke-dasharray="6 10" />
+    <!-- Streamline 7 (Seminare card & Footer) -->
+    <path d="M -60,1580 C 320,1520 680,1620 1060,1550 C 1280,1500 1460,1570 1620,1530" stroke-width="1.0" />
+  </g>
+
+  <!-- Large Soaring Brand Bird (Upper Right Canvas) -->
+  <g class="services-bird-main" transform="translate(860, 160) scale(1.05)">
+    <!-- Compass flight radius rings -->
+    <ellipse cx="270" cy="90" rx="340" ry="180" stroke="#1F4E5B" stroke-opacity="0.035" stroke-width="0.9" stroke-dasharray="3 10" fill="none" />
+    <circle cx="270" cy="90" r="220" stroke="#232725" stroke-opacity="0.02" stroke-width="0.75" fill="none" />
+    
+    <!-- Wing echo contour -->
+    <path d="M 0,165 C 25,145 60,110 115,92 C 165,76 210,80 230,86 C 275,60 325,18 385,5 C 435,-6 490,12 540,30 C 485,32 415,36 345,68 C 295,90 265,110 252,120 C 260,121 268,123 274,126 C 264,130 252,136 248,142 C 238,155 215,168 175,152 C 135,136 80,140 0,165 Z" 
+          transform="translate(-10, -12) scale(1.03)"
+          fill="none" 
+          stroke="#1F4E5B" 
+          stroke-opacity="0.04" 
+          stroke-width="0.9" 
+          stroke-dasharray="3 7" />
+
+    <!-- Main Bird Body & Wings -->
+    <path d="M 0,165 C 25,145 60,110 115,92 C 165,76 210,80 230,86 C 275,60 325,18 385,5 C 435,-6 490,12 540,30 C 485,32 415,36 345,68 C 295,90 265,110 252,120 C 260,121 268,123 274,126 C 264,130 252,136 248,142 C 238,155 215,168 175,152 C 135,136 80,140 0,165 Z" 
+          fill="url(#servBirdFill)" 
+          stroke="url(#servBirdStroke)" 
+          stroke-width="1.3" 
+          stroke-linejoin="round" />
+
+    <!-- Wing Flow Accents -->
+    <path d="M 120,95 C 190,82 250,60 350,38 C 420,24 470,22 520,30" 
+          fill="none" 
+          stroke="url(#servBirdStroke)" 
+          stroke-width="0.8" 
+          stroke-dasharray="2 4" />
+  </g>
+
+  <!-- Secondary Soaring Bird (Lower Left Canvas - Circling upwards) -->
+  <g class="services-bird-secondary" transform="translate(140, 1020) scale(0.85) rotate(-6)">
+    <!-- Ambient flight aura -->
+    <ellipse cx="270" cy="90" rx="300" ry="160" stroke="#1F4E5B" stroke-opacity="0.03" stroke-width="0.8" stroke-dasharray="4 8" fill="none" />
+
+    <!-- Bird silhouette -->
+    <path d="M 0,165 C 25,145 60,110 115,92 C 165,76 210,80 230,86 C 275,60 325,18 385,5 C 435,-6 490,12 540,30 C 485,32 415,36 345,68 C 295,90 265,110 252,120 C 260,121 268,123 274,126 C 264,130 252,136 248,142 C 238,155 215,168 175,152 C 135,136 80,140 0,165 Z" 
+          fill="url(#servBirdFill)" 
+          stroke="url(#servBirdStroke)" 
+          stroke-width="1.2" 
+          stroke-linejoin="round" />
+  </g>
+
+  <!-- Distant Soaring Birds -->
+  <g class="services-distant-bird-1" transform="translate(1180, 820) scale(0.35)">
+    <path d="M 0,165 C 25,145 60,110 115,92 C 165,76 210,80 230,86 C 275,60 325,18 385,5 C 435,-6 490,12 540,30 C 485,32 415,36 345,68 C 295,90 265,110 252,120 C 260,121 268,123 274,126 C 264,130 252,136 248,142 C 238,155 215,168 175,152 C 135,136 80,140 0,165 Z" 
+          fill="#1F4E5B" fill-opacity="0.04" stroke="#1F4E5B" stroke-opacity="0.07" stroke-width="1.5" />
+  </g>
+  <g class="services-distant-bird-2" transform="translate(340, 1540) scale(0.28) rotate(4)">
+    <path d="M 0,165 C 25,145 60,110 115,92 C 165,76 210,80 230,86 C 275,60 325,18 385,5 C 435,-6 490,12 540,30 C 485,32 415,36 345,68 C 295,90 265,110 252,120 C 260,121 268,123 274,126 C 264,130 252,136 248,142 C 238,155 215,168 175,152 C 135,136 80,140 0,165 Z" 
+          fill="#232725" fill-opacity="0.03" stroke="#232725" stroke-opacity="0.06" stroke-width="1.5" />
+  </g>
+
+  <!-- Architectural Nautical Crosshairs (+) -->
+  <g class="services-crosshairs" stroke="#232725" stroke-opacity="0.04" stroke-width="1">
+    <line x1="200" y1="210" x2="200" y2="224" />
+    <line x1="193" y1="217" x2="207" y2="217" />
+
+    <line x1="780" y1="460" x2="780" y2="474" />
+    <line x1="773" y1="467" x2="787" y2="467" />
+
+    <line x1="1290" y1="1120" x2="1290" y2="1134" />
+    <line x1="1283" y1="1127" x2="1297" y2="1127" />
+
+    <line x1="680" y1="1480" x2="680" y2="1494" />
+    <line x1="673" y1="1487" x2="687" y2="1487" />
+  </g>
+</svg>

@@ -1,0 +1,111 @@
+<svg viewBox="0 0 1440 1020" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" class="contact-pattern-svg">
+  <defs>
+    <!-- Soft Gradients matching Hero & Services Brand Patterns -->
+    <linearGradient id="contactAirGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#232725" stop-opacity="0" />
+      <stop offset="25%" stop-color="#232725" stop-opacity="0.045" />
+      <stop offset="50%" stop-color="#1F4E5B" stop-opacity="0.08" />
+      <stop offset="75%" stop-color="#232725" stop-opacity="0.04" />
+      <stop offset="100%" stop-color="#232725" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="contactBirdFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1F4E5B" stop-opacity="0.07" />
+      <stop offset="60%" stop-color="#232725" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#1F4E5B" stop-opacity="0.025" />
+    </linearGradient>
+
+    <linearGradient id="contactBirdStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1F4E5B" stop-opacity="0.16" />
+      <stop offset="70%" stop-color="#232725" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#1F4E5B" stop-opacity="0.05" />
+    </linearGradient>
+
+    <!-- Micro Dot Texture (calm paper feel matching hero & services) -->
+    <pattern id="contactMicroDots" width="56" height="56" patternUnits="userSpaceOnUse">
+      <circle cx="28" cy="28" r="0.8" fill="#232725" fill-opacity="0.025" />
+    </pattern>
+  </defs>
+
+  <!-- Base Micro Dots -->
+  <rect width="100%" height="100%" fill="url(#contactMicroDots)" />
+
+  <!-- Flowing Calm Thermal Streamlines across the entire section -->
+  <g class="contact-airstreams" stroke="url(#contactAirGrad)" fill="none" stroke-linecap="round">
+    <!-- Streamline 1 (Header region) -->
+    <path d="M -80,100 C 280,50 640,140 1020,80 C 1260,40 1440,100 1560,70" stroke-width="1.0" />
+    <!-- Streamline 2 (Upper glide current) -->
+    <path d="M -100,230 C 220,180 540,280 920,210 C 1220,150 1400,220 1580,190" stroke-width="0.85" stroke-dasharray="5 9" />
+    <!-- Streamline 3 (Mid horizon current) -->
+    <path d="M -60,440 C 320,390 680,490 1060,420 C 1280,370 1460,440 1600,400" stroke-width="1.1" />
+    <!-- Streamline 4 (Between text & form) -->
+    <path d="M -120,640 C 260,590 600,680 960,610 C 1260,550 1420,630 1620,590" stroke-width="0.85" stroke-dasharray="4 8" />
+    <!-- Streamline 5 (Below form card) -->
+    <path d="M -80,820 C 300,760 640,860 1020,790 C 1300,730 1480,810 1620,770" stroke-width="1.0" />
+    <!-- Streamline 6 (Footer transition) -->
+    <path d="M -100,960 C 240,910 560,1010 940,940 C 1240,880 1420,960 1600,920" stroke-width="0.9" stroke-dasharray="6 10" />
+  </g>
+
+  <!-- 1. PRIMARY SOARING BRAND BIRD (Upper Center/Right, visible above & over the form card) -->
+  <g class="contact-bird-main" transform="translate(740, 50) scale(1.08)">
+    <!-- Ambient flight radius aura / nautical compass ring -->
+    <ellipse cx="270" cy="90" rx="340" ry="180" stroke="#1F4E5B" stroke-opacity="0.04" stroke-width="0.9" stroke-dasharray="3 10" fill="none" />
+    <circle cx="270" cy="90" r="220" stroke="#232725" stroke-opacity="0.025" stroke-width="0.75" fill="none" />
+
+    <!-- Delicate flight path curve leading toward the bird -->
+    <path d="M -180,220 C -60,175 120,130 250,100" stroke="#1F4E5B" stroke-opacity="0.07" stroke-width="1" stroke-dasharray="4 6" fill="none" />
+
+    <!-- Updraft Echo Contour (Echo wave above the wing) -->
+    <path d="M 0,165 C 25,145 60,110 115,92 C 165,76 210,80 230,86 C 275,60 325,18 385,5 C 435,-6 490,12 540,30 C 485,32 415,36 345,68 C 295,90 265,110 252,120 C 260,121 268,123 274,126 C 264,130 252,136 248,142 C 238,155 215,168 175,152 C 135,136 80,140 0,165 Z" 
+          transform="translate(-10, -12) scale(1.03)"
+          fill="none" 
+          stroke="#1F4E5B" 
+          stroke-opacity="0.05" 
+          stroke-width="0.9" 
+          stroke-dasharray="3 7" />
+
+    <!-- Primary Soaring Seagull -->
+    <path d="M 0,165 C 25,145 60,110 115,92 C 165,76 210,80 230,86 C 275,60 325,18 385,5 C 435,-6 490,12 540,30 C 485,32 415,36 345,68 C 295,90 265,110 252,120 C 260,121 268,123 274,126 C 264,130 252,136 248,142 C 238,155 215,168 175,152 C 135,136 80,140 0,165 Z" 
+          fill="url(#contactBirdFill)" 
+          stroke="url(#contactBirdStroke)" 
+          stroke-width="1.3" 
+          stroke-linejoin="round" />
+
+    <!-- Internal wing flow accent line -->
+    <path d="M 120,95 C 190,82 250,60 350,38 C 420,24 470,22 520,30" 
+          fill="none" 
+          stroke="url(#contactBirdStroke)" 
+          stroke-width="0.8" 
+          stroke-dasharray="2 4" />
+
+    <!-- Subtle Staffhorst geo-coordinates label -->
+    <text x="270" y="295" 
+          font-family="'Plus Jakarta Sans', system-ui, sans-serif" 
+          font-size="10" 
+          font-weight="500" 
+          letter-spacing="0.22em" 
+          fill="#232725" 
+          fill-opacity="0.14" 
+          text-anchor="middle">52°43'00"N · 08°59'00"E</text>
+  </g>
+
+  <!-- 2. COMPANION BIRD (Lower area below the form card, visible in the lower negative space) -->
+  <g class="contact-bird-companion" transform="translate(860, 760) scale(0.62)">
+    <circle cx="270" cy="90" r="190" stroke="#1F4E5B" stroke-opacity="0.035" stroke-width="0.8" stroke-dasharray="3 8" fill="none" />
+    <path d="M 0,165 C 25,145 60,110 115,92 C 165,76 210,80 230,86 C 275,60 325,18 385,5 C 435,-6 490,12 540,30 C 485,32 415,36 345,68 C 295,90 265,110 252,120 C 260,121 268,123 274,126 C 264,130 252,136 248,142 C 238,155 215,168 175,152 C 135,136 80,140 0,165 Z" 
+          fill="url(#contactBirdFill)" 
+          stroke="url(#contactBirdStroke)" 
+          stroke-width="1.4" 
+          stroke-linejoin="round" />
+  </g>
+
+  <!-- 3. DISTANT MICRO BIRD (Upper Left above contact info) -->
+  <g class="contact-bird-distant" transform="translate(180, 80) scale(0.35)">
+    <path d="M 0,165 C 25,145 60,110 115,92 C 165,76 210,80 230,86 C 275,60 325,18 385,5 C 435,-6 490,12 540,30 C 485,32 415,36 345,68 C 295,90 265,110 252,120 C 260,121 268,123 274,126 C 264,130 252,136 248,142 C 238,155 215,168 175,152 C 135,136 80,140 0,165 Z" 
+          fill="#1F4E5B" 
+          fill-opacity="0.05" 
+          stroke="#1F4E5B" 
+          stroke-opacity="0.09" 
+          stroke-width="1.6" />
+  </g>
+</svg>

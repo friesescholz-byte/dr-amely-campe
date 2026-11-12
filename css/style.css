@@ -457,12 +457,103 @@ a {
 
 /* --- HERO SECTION (SCREENSHOT 1) --- */
 .hero-section {
+    position: relative;
+    overflow: hidden;
     padding-top: clamp(150px, 16vh, 200px);
     padding-bottom: clamp(70px, 8vw, 120px);
     background-color: var(--color-bg-greige);
 }
 
+/* Hero Hintergrund-Slideshow (Zart & feststehend im Hintergrund) */
+.hero-bg-slider {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.hero-bg-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 1.8s;
+}
+
+.hero-bg-slide.active {
+    opacity: 0.19;
+    visibility: visible;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: saturate(0.85);
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 65% 45%, rgba(237, 234, 227, 0.25) 0%, rgba(237, 234, 227, 0.62) 60%, rgba(237, 234, 227, 0.90) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Dezentes Vogel- & Thermikmuster (Scholz & Friese UX Pro Max) */
+.hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.hero-pattern-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none;
+}
+
+/* Subtles, ruhiges Gleiten des Hauptvogels auf thermischen Aufwinden */
+@keyframes heroBirdGlide {
+    0%, 100% {
+        transform: translate(620px, 20px) scale(1.95);
+    }
+    50% {
+        transform: translate(620px, 14px) scale(1.95);
+    }
+}
+
+.pattern-main-bird {
+    transform: translate(620px, 20px) scale(1.95);
+    animation: heroBirdGlide 14s ease-in-out infinite;
+    will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pattern-main-bird {
+        animation: none !important;
+    }
+}
+
 .hero-grid {
+    position: relative;
+    z-index: 3;
     display: grid;
     grid-template-columns: 1.15fr 1fr;
     gap: 70px;
@@ -480,6 +571,7 @@ a {
     border-radius: var(--radius-xs);
     overflow: hidden;
     background-color: var(--color-bg-schlamm);
+    box-shadow: 0 8px 28px rgba(35, 39, 37, 0.05);
 }
 
 .hero-slide {
@@ -503,12 +595,11 @@ a {
     object-fit: cover;
     object-position: center;
     display: block;
-    transform: scale(1);
-    transition: transform 6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: none;
 }
 
 .hero-slide.active .hero-slide-img {
-    transform: scale(1.03);
+    transform: none;
 }
 
 /* Slider Dots Indicator */
@@ -586,9 +677,31 @@ a {
     padding: clamp(90px, 10vw, 140px) 0;
     background-color: var(--color-bg-greige);
     border-top: 1px solid var(--color-border-subtle);
+    position: relative;
+    overflow: hidden;
+}
+
+.wiedererkennung-bg-pattern {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.wiedererkennung-pattern-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.95;
 }
 
 .wiedererkennung-grid {
+    position: relative;
+    z-index: 2;
     display: grid;
     grid-template-columns: 1fr 1.35fr;
     gap: 80px;
@@ -943,9 +1056,31 @@ a {
 .combination-section {
     padding: clamp(90px, 10vw, 140px) 0;
     background-color: var(--color-bg-greige);
+    position: relative;
+    overflow: hidden;
+}
+
+.combination-bg-pattern {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.combination-pattern-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.95;
 }
 
 .combination-grid {
+    position: relative;
+    z-index: 2;
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     gap: 70px;
@@ -1053,7 +1188,31 @@ a {
 .services-section {
     background-color: var(--color-bg-greige);
     padding: clamp(70px, 8vw, 110px) 0;
-    border-top: 1px solid var(--color-border-subtle);
+    position: relative;
+    overflow: hidden;
+}
+
+.services-bg-pattern {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.services-pattern-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    opacity: 0.95;
+}
+
+.services-section .container {
+    position: relative;
+    z-index: 2;
 }
 
 .services-main-header {
@@ -1209,10 +1368,67 @@ a {
 /* --- PHILOSOPHY / STATEMENT QUOTE SECTION (SCREENSHOT) --- */
 .quote-section {
     background-color: var(--color-bg-greige);
-    padding: clamp(90px, 12vw, 160px) 0;
-    border-top: 1px solid var(--color-border-subtle);
-    border-bottom: 1px solid var(--color-border-subtle);
+    padding: clamp(100px, 13vw, 170px) 0;
     position: relative;
+    overflow: hidden;
+}
+
+.quote-bg-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.quote-bg-fixed-img {
+    position: absolute;
+    inset: -30px 0;
+    background-image: url('../images/hero_moewe_weit.webp');
+    background-size: cover;
+    background-position: center 32%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.38;
+}
+
+.quote-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 48%, rgba(237, 234, 227, 0.45) 0%, rgba(237, 234, 227, 0.74) 65%, rgba(237, 234, 227, 0.92) 100%);
+}
+
+.quote-section .container {
+    position: relative;
+    z-index: 3;
+}
+
+/* Organic Curved Dividers */
+.section-curve-divider {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.section-curve-divider svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.quote-section .curve-top {
+    top: -1px;
+    height: clamp(34px, 5vw, 60px);
+}
+
+.quote-section .curve-bottom {
+    bottom: -1px;
+    height: clamp(34px, 5vw, 60px);
 }
 
 .quote-container {
@@ -1260,6 +1476,38 @@ a {
 .seminar-section {
     background-color: var(--color-bg-greige);
     padding: var(--section-padding) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.seminar-bg-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.seminar-bg-fixed-img {
+    position: absolute;
+    inset: -30px 0;
+    background-image: url('../images/hero_nordic_river.webp');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.30;
+}
+
+.seminar-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 45%, rgba(237, 234, 227, 0.52) 0%, rgba(237, 234, 227, 0.74) 65%, rgba(237, 234, 227, 0.88) 100%);
+}
+
+.seminar-section .container {
+    position: relative;
+    z-index: 2;
 }
 
 .seminar-header {
@@ -1694,9 +1942,31 @@ a {
 .contact-section {
     background-color: var(--color-bg-greige);
     padding: var(--section-padding) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-bg-pattern {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.contact-pattern-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right;
+    opacity: 0.95;
 }
 
 .contact-grid {
+    position: relative;
+    z-index: 2;
     display: grid;
     grid-template-columns: 0.95fr 1.05fr;
     gap: 80px;
@@ -2721,10 +2991,46 @@ textarea.admin-form-control {
    TESTIMONIALS SECTION (BASE)
    ========================================================================== */
 .testimonials-section {
-    background-color: var(--color-bg-schlamm);
+    background-color: var(--color-bg-greige);
     position: relative;
     overflow: hidden;
     padding: var(--section-padding) 0;
+}
+
+.testimonials-bg-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.testimonials-bg-fixed-img {
+    position: absolute;
+    inset: -30px 0;
+    background-image: url('../images/hero_drone_ocean_beach.webp');
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.28;
+}
+
+.testimonials-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(237, 234, 227, 0.55) 0%, rgba(237, 234, 227, 0.78) 65%, rgba(237, 234, 227, 0.90) 100%);
+}
+
+.testimonials-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.google-showcase-container {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.05);
 }
 
 .testimonials-intro {
@@ -3001,6 +3307,11 @@ textarea.admin-form-control {
         padding-bottom: 60px;
     }
 
+    .pattern-main-bird {
+        transform: translate(540px, 310px) scale(1.45);
+        animation: none;
+    }
+
     .hero-grid {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -3151,6 +3462,11 @@ textarea.admin-form-control {
         padding-bottom: 50px;
     }
 
+    .pattern-main-bird {
+        transform: translate(480px, 320px) scale(1.15);
+        animation: none;
+    }
+
     .hero-grid {
         grid-template-columns: 1fr;
         gap: 28px;
@@ -3232,37 +3548,87 @@ textarea.admin-form-control {
     }
 
     .gedanken-cards-stack {
-        height: 350px;
+        height: 220px;
+        transition: height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .gedanken-cards-stack.is-showing-final {
+        height: 260px;
     }
 
     .gedanken-card {
-        padding: 24px 22px 20px;
-        border-radius: var(--radius-xs);
+        padding: 18px 20px 16px;
+        border-radius: 6px;
+    }
+
+    .gedanken-card.is-final-card {
+        padding: 16px 18px 14px;
+    }
+
+    .gedanken-card-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 100%;
     }
 
     .gedanken-quote-glyph {
-        font-size: 2.8rem;
-        margin-bottom: 2px;
+        font-size: 2.2rem;
+        line-height: 0.85;
+        margin-bottom: 6px;
+        color: var(--color-accent-teal);
+        opacity: 0.85;
     }
 
     .gedanken-text {
-        font-size: clamp(1.18rem, 4.5vw, 1.38rem);
-        line-height: 1.35;
+        font-size: 1.15rem;
+        line-height: 1.38;
+        font-weight: 500;
+        margin: 0;
+        color: var(--color-anthrazit);
     }
 
-    .gedanken-card-action {
-        padding-top: 14px;
-        font-size: 0.78rem;
+    /* Final Resolution Card Mobile */
+    .final-card-inner {
+        padding: 0;
+        gap: 6px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .final-card-tag {
+        font-size: 0.68rem;
+        padding: 2px 10px;
+        letter-spacing: 0.10em;
     }
 
     .final-card-title {
-        font-size: 1.45rem;
-        line-height: 1.25;
+        font-size: 1.18rem;
+        line-height: 1.20;
+        font-weight: 600;
+        margin: 0;
     }
 
     .final-card-desc {
-        font-size: 0.88rem;
-        line-height: 1.55;
+        font-size: 0.80rem;
+        line-height: 1.40;
+        max-width: 310px;
+        margin: 0;
+    }
+
+    .final-card-buttons {
+        gap: 6px;
+        margin-top: 4px;
+    }
+
+    .final-card-buttons .btn-sage {
+        padding: 8px 18px;
+        font-size: 0.80rem;
+    }
+
+    .final-card-buttons .btn-text-link {
+        font-size: 0.76rem;
+        padding: 2px 0;
     }
 
     .gedanken-stack-footer {
@@ -3292,7 +3658,18 @@ textarea.admin-form-control {
 
     /* Quote Section (Philosophie) */
     .quote-section {
-        padding: 60px 0;
+        padding: 70px 0;
+    }
+
+    .quote-bg-fixed-img,
+    .seminar-bg-fixed-img,
+    .testimonials-bg-fixed-img {
+        background-attachment: scroll;
+    }
+
+    .quote-section .curve-top,
+    .quote-section .curve-bottom {
+        height: 28px;
     }
 
     .quote-statement {
